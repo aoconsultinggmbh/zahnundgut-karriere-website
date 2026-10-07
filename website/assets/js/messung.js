@@ -81,7 +81,7 @@
   /* ---------- Meta-Pixel ---------- */
   // Vorschau (GitHub Pages) und lokaler Test: Banner erscheint zum Ansehen, Meta wird aber nie geladen,
   // damit keine Testbesuche im Werbekonto des Kunden landen.
-  var NUR_TEST = /(^|\.)vorschau\.ao-consult\.de$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+  var NUR_TEST = /(^|\.)vorschau\.ao-consult\.de$|github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
 
   function startePixel() {
     if (pixelGeladen || !PIXEL) return;

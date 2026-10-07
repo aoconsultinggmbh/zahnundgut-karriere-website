@@ -15,7 +15,7 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 ## Umsetzung
 
 - **Technik:** Kopie des AO-Standards aus `messerschmidt-karriere` (neuester Stand: bauen.py, Barrierefreiheits-Widget,
-  Einwilligungsbanner schlafend, Google for Jobs, Indeed-Feed, Matomo). Abschnitte in der Reihenfolge der alten Seite,
+  Einwilligungsbanner für den Meta-Pixel, Google for Jobs, Indeed-Feed, Matomo). Abschnitte in der Reihenfolge der alten Seite,
   die der Whiteblick-Reihenfolge entspricht: Hero, Über uns, Team, Benefits, Stellen, Leitsatz, Drei Gründe, Ansprechpartnerin,
   Tipps, Bewerbungsprozess, FAQ.
 - **Texte:** 1:1 von der alten Seite (Über uns, Team, Benefits, Stellen, Tipps, Prozess, FAQ, Impressum). Gedankenstriche
@@ -53,6 +53,8 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 
 Nicht verwendet: 15, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 
+- **Matomo:** Eintrag „ZAHN & GUT Karriere“ angelegt (ID 6, statistik.ao-consult.de, 07.10.2026).
+
 ## Offen vor dem Livegang
 
 - [x] Ausbildung auf 2027 umgestellt (Awan 07.10.2026).
@@ -61,5 +63,4 @@ Nicht verwendet: 15, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 - [ ] Domain karriere-zahnundgut.de: Wo liegt sie, wo liegen die Postfächer (MX)? Alte Seite liegt bei Raidboxes.
 - [ ] Datenschutz von der Praxis freigeben lassen (neu geschrieben, weil Hoster und Dienste wechseln; Meta-Pixel jetzt mit Einwilligung).
 - [ ] Gehalt nur mit Freigabe der Praxis (Google zeigt Anzeigen mit Gehalt besser).
-- [ ] Matomo-Eintrag anlegen, `matomo_id` in kunde.json eintragen.
 - [ ] Wistia-Video: falls gewünscht, als MP4 lokal einbauen (wie bei Whiteblick), nicht als Einbettung.
