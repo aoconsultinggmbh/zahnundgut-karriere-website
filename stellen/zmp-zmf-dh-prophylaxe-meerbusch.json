@@ -105,5 +105,19 @@
     }
   ],
   "bild": "assets/img/stelle-zmp.jpg",
-  "bild_alt": "Zwei Kolleginnen üben das Zähneputzen an einem großen Zahnmodell"
+  "bild_alt": "Zwei Kolleginnen üben das Zähneputzen an einem großen Zahnmodell",
+  "einblicke": [
+    {
+      "bild": "assets/img/einblick-25.jpg",
+      "alt": "Zahnarzt erklärt an einem Zahnmodell"
+    },
+    {
+      "bild": "assets/img/einblick-52.jpg",
+      "alt": "Heller Behandlungsraum"
+    },
+    {
+      "bild": "assets/img/einblick-35.jpg",
+      "alt": "Zwei Kolleginnen klatschen sich ab"
+    }
+  ]
 }

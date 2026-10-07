@@ -107,5 +107,19 @@
     }
   ],
   "bild": "assets/img/stelle-zmv.jpg",
-  "bild_alt": "Mitarbeiterin am Schreibtisch in der Praxisverwaltung"
+  "bild_alt": "Mitarbeiterin am Schreibtisch in der Praxisverwaltung",
+  "einblicke": [
+    {
+      "bild": "assets/img/einblick-15.jpg",
+      "alt": "Zwei Kolleginnen am Empfang mit Tablet"
+    },
+    {
+      "bild": "assets/img/einblick-29.jpg",
+      "alt": "Mitarbeiterin am Empfang reicht einem Patienten eine Karte"
+    },
+    {
+      "bild": "assets/img/einblick-59.jpg",
+      "alt": "Teambesprechung am Tisch"
+    }
+  ]
 }

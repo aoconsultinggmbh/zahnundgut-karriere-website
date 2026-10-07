@@ -375,3 +375,19 @@ html.ruhig .aussage-bild .aussage-text span,html.bf-ruhe .aussage-bild .aussage-
 .stellen-liste,.benefits-raster{max-width:none}
 #tipps>*{max-width:1480px;padding-left:40px;padding-right:40px}
 @media (max-width:899px){#tipps>*{padding-left:20px;padding-right:20px}}
+
+/* Stellenseiten: grüner Kopf ohne Hintergrundbild, zweispaltig, Foto rechts vollständig (Wunsch Awan 07.10.2026) */
+.stelle-kopf-gruen{background:var(--gruen-haupt) url("../img/logo-band.svg") center/cover no-repeat;min-height:0;display:block}
+.stelle-kopf-gruen::before{display:none}
+.stelle-kopf-raster{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+.stelle-kopf-raster .seitenkopf-text{padding:0}
+.stelle-kopf-gruen h1{color:#fff;font-size:clamp(28px,3.2vw,42px);max-width:none;text-shadow:none}
+.stelle-kopf-gruen .lead{color:#fff;font-size:18px;text-shadow:none}
+.stelle-kopf-bild{margin:0;box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.stelle-kopf-bild img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:900px){.stelle-kopf-raster{grid-template-columns:1fr}.stelle-kopf-bild{order:-1}}
+/* Einblicke auf den Stellenseiten */
+.einblicke-raster{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.einblicke-raster figure{margin:0}
+.einblicke-raster img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:600px){.einblicke-raster{grid-template-columns:1fr 1fr}.einblicke-raster figure:first-child{grid-column:1/-1}}

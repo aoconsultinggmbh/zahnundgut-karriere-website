@@ -42,16 +42,19 @@
     <a href="../index.html">Karriere</a> <span aria-hidden="true">/</span> <a href="../index.html#stellen">Stellenangebote</a> <span aria-hidden="true">/</span> <span aria-current="page">{{titel_kurz}}</span>
   </nav>
 
-  <section class="seitenkopf{{seitenkopf_klasse}} stelle-kopf">
-    {{{kopf_bild}}}
-    <div class="wrap seitenkopf-text">
-      <p class="marken">{{{marken_html}}}<span class="marke marke-grau">{{standort_ort}}</span><span class="marke marke-grau">{{beschaeftigungsart_text}}</span></p>
-      <h1>{{titel}}</h1>
-      <p class="lead">{{kurz}}</p>
-      <div class="knoepfe">
-        <a class="knopf" href="#bewerben">Jetzt bewerben</a>
-        {{{whatsapp_knopf_hell}}}
+  <!-- Kopf: grüne Fläche, links Text, rechts das Foto vollständig (kein Hintergrundbild, Wunsch Awan 07.10.2026) -->
+  <section class="seitenkopf stelle-kopf stelle-kopf-gruen">
+    <div class="wrap stelle-kopf-raster">
+      <div class="seitenkopf-text">
+        <p class="marken">{{{marken_html}}}<span class="marke marke-grau">{{standort_ort}}</span><span class="marke marke-grau">{{beschaeftigungsart_text}}</span></p>
+        <h1>{{titel}}</h1>
+        <p class="lead">{{kurz}}</p>
+        <div class="knoepfe">
+          <a class="knopf knopf-hell" href="#bewerben">Jetzt bewerben</a>
+          {{{whatsapp_knopf_hell}}}
+        </div>
       </div>
+      {{{kopf_bild}}}
     </div>
   </section>
 
@@ -74,6 +77,8 @@
         <h2>Dein Profil</h2>
         <ul class="haken-liste">{{{profil_html}}}</ul>
       </div>
+
+      {{{einblicke_html}}}
 
       <div class="text-block">
         <h2>Freu Dich auf</h2>

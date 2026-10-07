@@ -49,6 +49,12 @@ Neu: Siegel „Top-Arbeitgeber 2025 / 2026“ (Dr. Right) von zahnundgut.de. Lau
 Weiße Schrift auf dem hellen Logo-Grün ist schlecht lesbar, deshalb Textboxen in #588010, Knöpfe in #6b9329
 mit großer Schrift; das helle Grün #97bf0d nur für Flächen, Linien und Marken.
 
+## Stellenseiten (07.10.2026, Wunsch Awan)
+
+Kopf ohne Hintergrundbild: grüne Fläche mit Logo-Schwüngen, links Text, rechts das Foto vollständig (4:3).
+Neu je Stelle drei Fotos „Einblicke in unsere Praxis“ (Feld `einblicke` in stellen/*.json), zwischen Profil und Benefits.
+Ausbildung 31/48/27, ZFA 26/54/50, ZMP 25/52/35, ZMV 15/29/59.
+
 ## Bilder (alte Karriereseite, Nummer = Zahn-und-Gut-Karriere-<Nr>.webp)
 
 | Datei | Nr. | Verwendung |
@@ -61,7 +67,8 @@ mit großer Schrift; das helle Grün #97bf0d nur für Flächen, Linien und Marke
 | gruende-teamgeist / -qualitaet / -menschlichkeit | 35 / 44 / 56 | Drei Gründe |
 | ansprechpartner(-quer) | 1 | Dr. Katrin Becker (bestätigt) |
 | faq-empfang | 12 | FAQ |
-| stelle-ausbildung / -zfa / -zmp / -zmv | 40 / 19 / 38 / 13 | Kopfbild der Stellenseiten |
+| stelle-ausbildung / -zfa / -zmp / -zmv | 40 / 19 / 38 / 13 | Foto im Kopf der Stellenseiten (4:3) |
+| einblick-<Nr> | siehe oben | Einblicke auf den Stellenseiten |
 
 Nicht verwendet: 15, 59, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 

@@ -104,5 +104,19 @@
     }
   ],
   "bild": "assets/img/stelle-zfa.jpg",
-  "bild_alt": "Zahnarzt bei einer Behandlung im hellen Behandlungszimmer"
+  "bild_alt": "Zahnarzt bei einer Behandlung im hellen Behandlungszimmer",
+  "einblicke": [
+    {
+      "bild": "assets/img/einblick-26.jpg",
+      "alt": "Zahnarzt bespricht mit einem Patienten die Behandlung"
+    },
+    {
+      "bild": "assets/img/einblick-54.jpg",
+      "alt": "Modernes Röntgengerät der Praxis"
+    },
+    {
+      "bild": "assets/img/einblick-50.jpg",
+      "alt": "Vorbereitetes Instrumententablett am Behandlungsstuhl"
+    }
+  ]
 }

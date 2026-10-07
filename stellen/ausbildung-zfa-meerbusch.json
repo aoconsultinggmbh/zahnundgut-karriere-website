@@ -73,5 +73,19 @@
     }
   ],
   "bild": "assets/img/stelle-ausbildung.jpg",
-  "bild_alt": "Drei Kolleginnen zeigen lachend ein Zahnmodell"
+  "bild_alt": "Drei Kolleginnen zeigen lachend ein Zahnmodell",
+  "einblicke": [
+    {
+      "bild": "assets/img/einblick-31.jpg",
+      "alt": "Vier Kolleginnen zeigen lächelnd auf einen freien Stuhl"
+    },
+    {
+      "bild": "assets/img/einblick-48.jpg",
+      "alt": "Spielecke für Kinder im Wartebereich"
+    },
+    {
+      "bild": "assets/img/einblick-27.jpg",
+      "alt": "Kollegin bereitet ein Röntgenbild mit einem Patienten vor"
+    }
+  ]
 }

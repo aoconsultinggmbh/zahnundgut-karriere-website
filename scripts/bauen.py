@@ -395,11 +395,21 @@ def baue(projekt: Path) -> int:
             "aufgaben_html": liste_html(s["aufgaben"]), "profil_html": liste_html(s["profil"]),
             "wir_bieten_html": liste_html(s["wir_bieten"]),
             "seitenkopf_klasse": " mit-bild" if s.get("bild") else "",
-            "kopf_bild": (('<div class="seitenkopf-bild" data-parallax><picture>'
+            # Foto im Kopf rechts neben dem Text, vollständig gezeigt (4:3), kein Hintergrundbild
+            "kopf_bild": (('<figure class="stelle-kopf-bild"><picture>'
                            + (f'<source srcset="../{esc(Path(s["bild"]).with_suffix(".webp").as_posix())}" type="image/webp">'
                               if (web / Path(s["bild"]).with_suffix(".webp")).exists() else "")
-                           + f'<img src="../{esc(s["bild"])}" alt="{esc(s.get("bild_alt", ""))}" width="1920" height="1080" fetchpriority="high"></picture></div>')
+                           + f'<img src="../{esc(s["bild"])}" alt="{esc(s.get("bild_alt", ""))}" width="1200" height="900" fetchpriority="high"></picture></figure>')
                           if s.get("bild") else ""),
+            # Einblicke: drei Praxisfotos zwischen Profil und Benefits (Feld "einblicke" in der Stelle)
+            "einblicke_html": (('<div class="text-block einblicke"><h2>Einblicke in unsere Praxis</h2><div class="einblicke-raster">'
+                                + "".join(
+                                    '<figure><picture>'
+                                    + (f'<source srcset="../{esc(Path(e["bild"]).with_suffix(".webp").as_posix())}" type="image/webp">'
+                                       if (web / Path(e["bild"]).with_suffix(".webp")).exists() else "")
+                                    + f'<img src="../{esc(e["bild"])}" alt="{esc(e.get("alt", ""))}" width="900" height="675" loading="lazy" decoding="async"></picture></figure>'
+                                    for e in s.get("einblicke") or [])
+                                + '</div></div>') if s.get("einblicke") else ""),
             "whatsapp_knopf_hell": (f'<a class="knopf knopf-rand-hell" href="https://wa.me/{esc(ap["whatsapp"].lstrip("+").replace(" ", ""))}?text={wa_text(s)}" rel="noopener" target="_blank">Per WhatsApp schreiben</a>'
                                     if ap.get("whatsapp") else ""),
             "zusatzfragen_html": zusatzfragen_html(s.get("formular_zusatzfragen")),
