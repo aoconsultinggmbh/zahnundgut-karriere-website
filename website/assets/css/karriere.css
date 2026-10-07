@@ -391,3 +391,8 @@ html.ruhig .aussage-bild .aussage-text span,html.bf-ruhe .aussage-bild .aussage-
 .einblicke-raster figure{margin:0}
 .einblicke-raster img{width:100%;aspect-ratio:4/3;object-fit:cover}
 @media (max-width:600px){.einblicke-raster{grid-template-columns:1fr 1fr}.einblicke-raster figure:first-child{grid-column:1/-1}}
+
+/* Recruiting-Video (von Wistia übernommen, liegt lokal, lädt erst beim Abspielen) */
+.video-band{padding-bottom:clamp(56px,8vw,110px)}
+.video-rahmen{margin:0 auto;max-width:1100px;box-shadow:0 18px 40px rgba(0,0,0,.15);background:#000}
+.video-rahmen video{display:block;width:100%;height:auto;aspect-ratio:16/9}

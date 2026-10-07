@@ -30,8 +30,10 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 - **Formular:** AO-Standard (`bewerbung-senden.php`, Mail an dr.k.becker@zahnundgut.de, Eingangsbestätigung, nichts gespeichert).
   Zusatzfragen wie im alten Initiativformular (ZMV: Wunschbereich, Berufserfahrung).
 - **Status:** wie auf der alten Seite: Ausbildung und ZFA „Offen“, ZMP/ZMF/DH und ZMV „Initiativ“.
-- **Nicht übernommen:** Wistia-Video im Abschnitt „Über uns“ (externer Dienst, AO-Standard lädt nichts von außen),
+- **Nicht übernommen:** Wistia-Einbettung (externer Dienst; das Video selbst liegt jetzt lokal, siehe unten),
   Google Analytics, Meta-Pixel, Google reCAPTCHA, Zapier, Borlabs Cookie, Google Maps.
+- **Video** (07.10.2026, Wunsch Awan): Recruiting-Video aus Wistia (ID tefbaejmkm, „ao_zahnundgut_16x9_recruitingvideo_v01“, 60 s)
+  als MP4 720p lokal in `assets/video/recruitingvideo.mp4`, Vorschaubild = Foto 31. Lädt erst beim Abspielen, kein Wistia, keine Zustimmung nötig.
 - **Foto Dr. Katrin Becker** = Bild 1 (von Awan per Screenshot der alten Seite bestätigt, 07.10.2026).
 - **Meta-Pixel** 1382645662547987 (laut Awan): lädt erst nach Einwilligung (`messung.js`, Kategorie „Marketing“),
   meldet auf danke.html zusätzlich `SubmitApplication`. In der Vorschau und lokal wird Meta nie geladen, nur das Banner gezeigt.
@@ -82,4 +84,3 @@ Nicht verwendet: 15, 59, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 - [ ] Domain karriere-zahnundgut.de: Wo liegt sie, wo liegen die Postfächer (MX)? Alte Seite liegt bei Raidboxes.
 - [ ] Datenschutz von der Praxis freigeben lassen (neu geschrieben, weil Hoster und Dienste wechseln; Meta-Pixel jetzt mit Einwilligung).
 - [ ] Gehalt nur mit Freigabe der Praxis (Google zeigt Anzeigen mit Gehalt besser).
-- [ ] Wistia-Video: falls gewünscht, als MP4 lokal einbauen (wie bei Whiteblick), nicht als Einbettung.
