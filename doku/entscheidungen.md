@@ -38,6 +38,17 @@ Stand 07.10.2026, Awan Tofik mit Claude.
   Banner-Text in `ao-konfiguration.js` (`hinweis`), einwilligung.js dafür um `hinweis`/`hinweisFein` erweitert.
 - **Google Analytics** entfällt (Awan), Besucherzahlen über Matomo cookiefrei. **Zapier** war nie in Betrieb (Awan), entfällt.
 
+## Überarbeitung Gestaltung (07.10.2026, Wunsch Awan: „zu stark von der CI abgewichen“)
+
+Mischung aus alter Karriereseite und Hauptseite statt AO-Grundgestaltung: weißer Kopf mit farbigem Logo,
+Menü in Open Sans Condensed (Versalien, gesperrt) wie zahnundgut.de, Überschriften Open Sans normal in Grün,
+Teamfoto mit hellem Verlauf und grünem Textband, Foto neben grüner Textbox (Über uns, Team, Ansprechpartnerin),
+Benefits auf grüner Fläche mit Logo-Schwüngen und weißen Karten, graue Stellenzeilen, eckige Formen,
+Leitsatz vor der Steinwand mit dem Kupfer-Logo (Hintergrund der Hauptseite), heller Fuß mit grünem Logo-Band.
+Neu: Siegel „Top-Arbeitgeber 2025 / 2026“ (Dr. Right) von zahnundgut.de. Laufband entfernt.
+Weiße Schrift auf dem hellen Logo-Grün ist schlecht lesbar, deshalb Textboxen in #588010, Knöpfe in #6b9329
+mit großer Schrift; das helle Grün #97bf0d nur für Flächen, Linien und Marken.
+
 ## Bilder (alte Karriereseite, Nummer = Zahn-und-Gut-Karriere-<Nr>.webp)
 
 | Datei | Nr. | Verwendung |
@@ -45,13 +56,14 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 | hero-team(-mobil), og-bild | 33 | Titelbild (Team klatscht ab), Vorschaubild |
 | ueber-uns | 21 | Über uns |
 | team | 62 | Team (Pausenraum) |
-| leitsatz | 59 | Hintergrund Leitsatz |
+| wand-logo | Hauptseite | Hintergrund Leitsatz (back--zahnarztpraxis.jpg) |
+| siegel-top-arbeitgeber-2025/2026 | Hauptseite | Siegel Dr. Right |
 | gruende-teamgeist / -qualitaet / -menschlichkeit | 35 / 44 / 56 | Drei Gründe |
 | ansprechpartner(-quer) | 1 | Dr. Katrin Becker (bestätigt) |
 | faq-empfang | 12 | FAQ |
 | stelle-ausbildung / -zfa / -zmp / -zmv | 40 / 19 / 38 / 13 | Kopfbild der Stellenseiten |
 
-Nicht verwendet: 15, 25, 26, 27, 29, 31, 48, 50, 52, 54.
+Nicht verwendet: 15, 59, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 
 - **Matomo:** Eintrag „ZAHN & GUT Karriere“ angelegt (ID 6, statistik.ao-consult.de, 07.10.2026).
 
