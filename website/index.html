@@ -24,7 +24,8 @@
 <link rel="stylesheet" href="assets/css/einwilligung.css?v=bdec8e14">
 <link rel="stylesheet" href="assets/css/barrierefreiheit.css?v=439c8efa">
 <link rel="stylesheet" href="assets/css/stil.css?v=6bf61de2">
-<link rel="stylesheet" href="assets/css/karriere.css?v=718fe11f">
+<link rel="stylesheet" href="assets/css/karriere.css?v=ff2c9c4a">
+<link rel="stylesheet" href="assets/css/frisch.css?v=7353e6aa">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,6 +69,7 @@
 </script>
 </head>
 <body class="startseite">
+<div class="f-fortschritt" aria-hidden="true"></div>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <header class="kopf">
@@ -90,105 +92,119 @@
 
 <main id="inhalt">
 
-<section class="hero hero-karriere" aria-labelledby="hero-titel">
-  <div class="hero-foto">
-    <picture>
-      <source media="(max-width:760px)" srcset="assets/img/hero-team-mobil.webp" type="image/webp">
-      <source media="(max-width:760px)" srcset="assets/img/hero-team-mobil.jpg">
-      <source srcset="assets/img/hero-team.webp" type="image/webp">
-      <img src="assets/img/hero-team.jpg" alt="Das Team von ZAHN &amp; GUT klatscht sich gemeinsam ab" width="1980" height="1320" fetchpriority="high">
-    </picture>
-  </div>
-  <div class="hero-schleier"></div>
-  <div class="wrap hero-inhalt">
-    <div class="hero-box">
-      <h1 id="hero-titel">ZFA, ZMP, ZMF, DH &amp; Zahnarzt Jobs in Meerbusch</h1>
-      <p class="hero-unterzeile">Zahnmedizin mit Herz. Werde Teil unseres Teams!</p>
-      <div class="knoepfe">
-        <a class="knopf knopf-hell" href="#stellen">Zu den Stellenangeboten</a>
+<!-- ===== Hero: Text links, Teamfoto rechts mit schwebenden Karten (Gestaltung 2027, Wunsch Awan 07.10.2026) ===== -->
+<section class="f-hero" aria-labelledby="hero-titel">
+  <div class="f-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="wrap f-hero-raster">
+    <div class="f-hero-text">
+      <p class="f-pill"><span class="f-live" aria-hidden="true"></span>Wir stellen ein · Meerbusch-Büderich</p>
+      <h1 id="hero-titel"><span class="f-h1-klein">ZFA, ZMP, ZMF, DH &amp; Azubi Jobs in Meerbusch</span><span class="f-h1-gross">Zahnmedizin mit <em class="f-markiert">Herz<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 50 4, 120 4, 197 12"/></svg></em>.</span></h1>
+      <p class="f-lead">Wenn Du in einem engagierten Team mitwirken willst, das Spaß an guter Medizin hat: Willkommen bei ZAHN&nbsp;&amp;&nbsp;GUT!</p>
+      <div class="f-knoepfe">
+        <a class="knopf" href="#stellen">Zu den Stellenangeboten <svg class="f-pfeil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="knopf knopf-rand" href="#video"><span class="f-play-klein"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>Video ansehen</a>
       </div>
+      <div class="f-vertrauen">
+        <div class="f-siegel-mini">
+          <img src="assets/img/siegel-top-arbeitgeber-2025.png" alt="Siegel Top 1000 Praxen 2025: Top-Arbeitgeber" width="400" height="240">
+          <img src="assets/img/siegel-top-arbeitgeber-2026.png" alt="Siegel Top 1000 Praxen 2026: Top-Arbeitgeber" width="400" height="258">
+        </div>
+        <p><strong>Top-Arbeitgeber 2025 &amp; 2026</strong><span>ausgezeichnet von Dr. Right</span></p>
+      </div>
+    </div>
+    <div class="f-hero-bild">
+      <div class="f-hero-foto"><picture><source srcset="assets/img/hero-team-43.webp" type="image/webp"><img src="assets/img/hero-team-43.jpg" alt="Das Team von ZAHN &amp; GUT klatscht sich gemeinsam ab" width="1320" height="990" fetchpriority="high"></picture></div>
+      <div class="f-schwebe f-s1"><span class="f-schwebe-ikon"><img src="assets/img/icons/kalender.svg" alt="" width="48" height="48"></span><p><strong>4-Tage-Woche</strong><span>in Absprache möglich</span></p></div>
+      <div class="f-schwebe f-s2"><span class="f-schwebe-ikon"><img src="assets/img/icons/uhr.svg" alt="" width="48" height="48"></span><p><strong>Mi. &amp; Fr. ab 13 Uhr</strong><span>früher Feierabend</span></p></div>
+      <div class="f-schwebe f-s3"><span class="f-schwebe-ikon"><img src="assets/img/icons/vorsorge.svg" alt="" width="48" height="48"></span><p><strong>Kein Notdienst</strong><span>kein Wochenenddienst</span></p></div>
     </div>
   </div>
 </section>
 
-<section id="auf-einen-blick" class="fakten-leiste" aria-label="Auf einen Blick">
-  <div class="wrap fakten-raster">
-    <div><strong>4-Tage-Woche</strong><span>in Absprache mit uns möglich</span></div>
-    <div><strong>Mi. und Fr. ab 13 Uhr</strong><span>früher Feierabend</span></div>
-    <div><strong>Kein Notdienst</strong><span>und kein Wochenenddienst</span></div>
-    <div><strong>Voll- oder Teilzeit</strong><span>Wiedereinstieg willkommen</span></div>
-  </div>
+<!-- ===== Zahlen, zählen beim Einblenden hoch ===== -->
+<section id="auf-einen-blick" class="wrap f-zahlen" aria-label="Auf einen Blick">
+  <div class="f-zahl f-anim"><strong><span data-zahl="4">4</span>-Tage</strong><span>Woche in Absprache möglich</span></div>
+  <div class="f-zahl f-anim"><strong><span data-zahl="13">13</span> Uhr</strong><span>Feierabend mittwochs und freitags</span></div>
+  <div class="f-zahl f-anim"><strong><span data-zahl="0">0</span></strong><span>Notdienste und Wochenenddienste</span></div>
+  <div class="f-zahl f-anim"><strong><span data-zahl="2">2</span>&times;</strong><span>Top-Arbeitgeber, 2025 und 2026</span></div>
 </section>
 
-<section id="ueber-uns" class="wrap abschnitt zwei ci-paar">
-  <div class="text-spalte">
-    <p class="dachzeile">Über uns</p>
-    <h2>Willkommen bei ZAHN &amp; GUT.</h2>
+<!-- ===== Über uns ===== -->
+<section id="ueber-uns" class="wrap abschnitt f-zwei">
+  <div class="f-text f-anim">
+    <p class="f-pill">Über uns</p>
+    <h2>Willkommen bei <span class="f-gruen">ZAHN&nbsp;&amp;&nbsp;GUT</span>.</h2>
     <p>Wir sind ZAHN &amp; GUT, eine moderne Gemeinschaftspraxis in Meerbusch. Bei uns stehen Teamgeist, Qualität und Menschlichkeit im Mittelpunkt.</p>
     <p>Wir bieten ein breites Behandlungsspektrum, von Zahnmedizin für Kinder bis Sofort-Implantologie, und schaffen eine Arbeitsatmosphäre, in der sich sowohl unsere Patienten als auch unser Team wohlfühlen.</p>
-    <p>Du findest uns in der 2. Etage des Geschäftshauses am Deutschen Eck in Meerbusch-Büderich. Die Praxis ist barrierefrei, voll klimatisiert und bequem per Aufzug zu erreichen.</p>
+    <ul class="f-haken">
+      <li>2. Etage am Deutschen Eck in Meerbusch-Büderich</li>
+      <li>Barrierefrei und bequem per Aufzug</li>
+      <li>Voll klimatisierte Praxis</li>
+    </ul>
   </div>
-  <figure class="bild-quer"><picture><source srcset="assets/img/ueber-uns.webp" type="image/webp"><img src="assets/img/ueber-uns.jpg" alt="Zahnarzt und Assistentin bei der Arbeit im Behandlungszimmer" width="1500" height="1000" loading="lazy" decoding="async"></picture></figure>
+  <div class="f-collage f-anim">
+    <figure class="f-foto f-foto-gross" data-tiefe="-0.05"><picture><source srcset="assets/img/ueber-uns.webp" type="image/webp"><img src="assets/img/ueber-uns.jpg" alt="Zahnarzt und Assistentin bei der Arbeit im Behandlungszimmer" width="1500" height="1000" loading="lazy" decoding="async"></picture></figure>
+    <figure class="f-foto f-foto-klein" data-tiefe="0.06"><picture><source srcset="assets/img/faq-empfang.webp" type="image/webp"><img src="assets/img/faq-empfang.jpg" alt="Mitarbeiterin telefoniert lächelnd am Empfang" width="1200" height="800" loading="lazy" decoding="async"></picture></figure>
+  </div>
 </section>
 
-<section id="video" class="wrap video-band" aria-labelledby="video-titel">
-  <div class="abschnitt-kopf">
-    <p class="dachzeile">Unser Team im Video</p>
-    <h2 id="video-titel">Lerne uns kennen.</h2>
+<!-- ===== Video ===== -->
+<section id="video" class="wrap f-video-band" aria-labelledby="video-titel">
+  <div class="f-kopf f-anim">
+    <p class="f-pill">Unser Team im Video</p>
+    <h2 id="video-titel">Lerne uns in 60 Sekunden kennen.</h2>
   </div>
-  <figure class="video-rahmen">
+  <figure class="f-video f-anim">
     <video controls preload="none" playsinline poster="assets/img/video-vorschau.jpg" width="1280" height="720">
       <source src="assets/video/recruitingvideo.mp4" type="video/mp4">
       Dein Browser kann das Video nicht abspielen. <a href="assets/video/recruitingvideo.mp4">Video herunterladen</a>
     </video>
+    <button type="button" class="f-play" aria-label="Video abspielen"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span></button>
     <figcaption class="sr-only">Recruiting-Video von ZAHN &amp; GUT: Mitarbeiterinnen erzählen, warum sie gerne in der Praxis arbeiten. Untertitel sind im Video eingeblendet.</figcaption>
   </figure>
 </section>
 
-<section id="team" class="wrap abschnitt zwei umgekehrt ci-paar">
-  <div class="text-spalte">
-    <p class="dachzeile">Unser Team</p>
-    <h2>Herzlich, engagiert und kollegial.</h2>
+<!-- ===== Team ===== -->
+<section id="team" class="wrap abschnitt f-zwei f-umgekehrt">
+  <div class="f-text f-anim">
+    <p class="f-pill">Unser Team</p>
+    <h2>Herzlich, engagiert und <span class="f-gruen">kollegial</span>.</h2>
     <p>Wir sind ein herzliches, engagiertes Team aus Zahnärzt:innen und Fachkräften. Gemeinsam decken wir ein breites Spektrum von Kinderzahnmedizin bis Implantologie ab.</p>
     <p>Dabei arbeiten wir kollegial, modern und patientenorientiert, immer mit dem Ziel, einander zu unterstützen und beste Ergebnisse für unsere Patienten zu erreichen.</p>
   </div>
-  <figure class="bild-quer"><picture><source srcset="assets/img/team.webp" type="image/webp"><img src="assets/img/team.jpg" alt="Das Team sitzt im Pausenraum, unterhält sich lächelnd und trinkt Kaffee" width="1500" height="1000" loading="lazy" decoding="async"></picture></figure>
-</section>
-
-<section class="wrap siegel-band" aria-label="Auszeichnungen">
-  <p class="dachzeile">Ausgezeichnet</p>
-  <h2>Top-Arbeitgeber 2025 und 2026.</h2>
-  <div class="siegel-reihe">
-    <picture><source srcset="assets/img/siegel-top-arbeitgeber-2025.webp" type="image/webp"><img src="assets/img/siegel-top-arbeitgeber-2025.png" alt="Siegel Top 1000 Praxen 2025: Top-Arbeitgeber, Zahnarztpraxis ZAHN &amp; GUT, Dr. Right" width="400" height="240" loading="lazy"></picture>
-    <picture><source srcset="assets/img/siegel-top-arbeitgeber-2026.webp" type="image/webp"><img src="assets/img/siegel-top-arbeitgeber-2026.png" alt="Siegel Top 1000 Praxen 2026: Top-Arbeitgeber, Zahnarztpraxis ZAHN &amp; GUT, Dr. Right" width="400" height="258" loading="lazy"></picture>
+  <div class="f-bildkarte f-anim">
+    <figure class="f-foto" data-tiefe="-0.04"><picture><source srcset="assets/img/team.webp" type="image/webp"><img src="assets/img/team.jpg" alt="Das Team sitzt im Pausenraum, unterhält sich lächelnd und trinkt Kaffee" width="1500" height="1000" loading="lazy" decoding="async"></picture></figure>
+    <div class="f-zitat"><span>Teamgeist</span><span>Qualität</span><span>Menschlichkeit</span></div>
   </div>
 </section>
 
-<section id="benefits" class="abschnitt benefits-gruen">
+<!-- ===== Benefits als Bento-Raster ===== -->
+<section id="benefits" class="abschnitt f-benefits">
   <div class="wrap">
-    <div class="abschnitt-kopf">
-      <p class="dachzeile">Benefits</p>
-      <h2>Unsere Benefits.</h2>
+    <div class="f-kopf f-anim">
+      <p class="f-pill">Benefits</p>
+      <h2>Das bekommst Du bei uns.</h2>
+      <p>Weitere Benefits kannst Du den jeweiligen Stellen entnehmen.</p>
     </div>
-    <div class="benefits-raster">
-      <div class="benefit"><img src="assets/img/icons/euro.svg" alt="" width="48" height="48" loading="lazy"><h3>Attraktive Bezahlung</h3><p>Faire und attraktive Vergütung. Heute und in der Zukunft.</p></div>
-      <div class="benefit"><img src="assets/img/icons/vorsorge.svg" alt="" width="48" height="48" loading="lazy"><h3>Betriebliche Altersvorsorge</h3><p>Wir bieten Dir eine betriebliche Altersvorsorge mit einem Arbeitgeberzuschuss.</p></div>
-      <div class="benefit"><img src="assets/img/icons/weiterbildung.svg" alt="" width="48" height="48" loading="lazy"><h3>Weiterbildungsmöglichkeiten</h3><p>Du möchtest Dich weiterbilden? Dann stehen wir Dir zur Seite.</p></div>
-      <div class="benefit"><img src="assets/img/icons/auto.svg" alt="" width="48" height="48" loading="lazy"><h3>Fahrtkostenzuschüsse</h3><p>Bei uns kannst Du Dich auf Fahrtkostenzuschüsse freuen.</p></div>
-      <div class="benefit"><img src="assets/img/icons/team.svg" alt="" width="48" height="48" loading="lazy"><h3>Mitarbeiterevents</h3><p>Regelmäßige Teamevents und gemeinsame Aktivitäten runden unser Portfolio ab.</p></div>
-      <div class="benefit"><img src="assets/img/icons/bahn.svg" alt="" width="48" height="48" loading="lazy"><h3>Mobilitätspaket</h3><p>Ein Jobticket oder Fahrtkostenzuschuss steht Dir auf Wunsch zur Verfügung.</p></div>
-      <div class="benefit"><img src="assets/img/icons/kalender.svg" alt="" width="48" height="48" loading="lazy"><h3>4-Tage-Woche</h3><p>In Absprache mit uns ist eine 4-Tage-Woche möglich.</p></div>
-      <div class="benefit"><img src="assets/img/icons/klima.svg" alt="" width="48" height="48" loading="lazy"><h3>Klimatisierter Arbeitsbereich</h3><p>Wir haben zu jeder Jahreszeit das passende Klima.</p></div>
-      <div class="benefit"><img src="assets/img/icons/lage.svg" alt="" width="48" height="48" loading="lazy"><h3>Gute Verkehrsanbindung</h3><p>Bei uns profitierst Du von einer guten Verkehrslage.</p></div>
+    <div class="f-bento">
+      <div class="f-kachel f-ben f-gross f-gruen-flaeche f-anim"><span class="f-ikon"><img src="assets/img/icons/euro.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Attraktive Bezahlung</h3><p>Faire und attraktive Vergütung. Heute und in der Zukunft. Dazu Weihnachtsgeld und Jahresbonus.</p></div>
+      <div class="f-kachel f-ben f-gross f-tint f-anim"><span class="f-riesig" aria-hidden="true">4</span><h3>4-Tage-Woche</h3><p>In Absprache mit uns ist eine 4-Tage-Woche möglich. Mittwochs und freitags ist schon um 13 Uhr Feierabend.</p></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/vorsorge.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Betriebliche Altersvorsorge</h3><p>Mit einem Arbeitgeberzuschuss.</p></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/weiterbildung.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Weiterbildung</h3><p>Du möchtest Dich weiterbilden? Dann stehen wir Dir zur Seite.</p></div>
+      <div class="f-kachel f-ben f-gross f-bild f-anim"><picture><source srcset="assets/img/einblick-59.webp" type="image/webp"><img src="assets/img/einblick-59.jpg" alt="Teambesprechung am Tisch" width="900" height="675" loading="lazy" decoding="async"></picture><div><h3>Mitarbeiterevents</h3><p>Regelmäßige Teamevents und gemeinsame Aktivitäten.</p></div></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/auto.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Fahrtkostenzuschüsse</h3><p>Bei uns kannst Du Dich auf Fahrtkostenzuschüsse freuen.</p></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/bahn.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Mobilitätspaket</h3><p>Ein Jobticket oder Fahrtkostenzuschuss auf Wunsch.</p></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/klima.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Klimatisiert</h3><p>Zu jeder Jahreszeit das passende Klima.</p></div>
+      <div class="f-kachel f-ben f-anim"><span class="f-ikon"><img src="assets/img/icons/lage.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Gute Lage</h3><p>Gute Verkehrsanbindung und gute Parksituation.</p></div>
     </div>
-    <p class="benefits-fuss">Weitere Benefits kannst Du den jeweiligen Stellen entnehmen.</p>
   </div>
 </section>
 
-<section id="stellen" class="abschnitt flaeche">
+<!-- ===== Stellen ===== -->
+<section id="stellen" class="abschnitt f-stellen">
   <div class="wrap">
-    <div class="abschnitt-kopf">
-      <p class="dachzeile">Wir suchen Dich</p>
+    <div class="f-kopf f-anim">
+      <p class="f-pill"><span class="f-live" aria-hidden="true"></span>Wir suchen Dich</p>
       <h2>Unsere Stellenangebote.</h2>
       <p>Für unsere Praxis in Meerbusch suchen wir Verstärkung in Assistenz, Prophylaxe und Verwaltung sowie Auszubildende.</p>
     </div>
@@ -238,76 +254,80 @@
   </div>
 </section>
 
-<section class="aussage aussage-bild" aria-label="Unser Leitsatz">
-  <div class="aussage-hg" data-parallax><picture><source srcset="assets/img/wand-logo.webp" type="image/webp"><img src="assets/img/wand-logo.jpg" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture></div>
-  <div class="wrap"><p class="aussage-text" data-woerter>Zahnmedizin mit Herz. Wenn Du in einem engagierten Team mitwirken willst, das Spaß an guter Medizin hat: Willkommen bei ZAHN&nbsp;&amp;&nbsp;GUT!</p></div>
+<!-- ===== Leitsatz, Wörter füllen sich beim Scrollen ===== -->
+<section class="wrap f-leitsatz" aria-label="Unser Leitsatz">
+  <div class="f-leitsatz-karte">
+    <div class="f-leitsatz-hg" aria-hidden="true"><picture><source srcset="assets/img/wand-logo.webp" type="image/webp"><img src="assets/img/wand-logo.jpg" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture></div>
+    <p class="aussage-text" data-woerter>Zahnmedizin mit Herz. Bei uns stehen Teamgeist, Qualität und Menschlichkeit im Mittelpunkt.</p>
+  </div>
 </section>
 
+<!-- ===== Drei Gründe ===== -->
 <section id="gruende" class="wrap abschnitt">
-  <div class="abschnitt-kopf">
-    <p class="dachzeile">Drei gute Gründe</p>
+  <div class="f-kopf f-anim">
+    <p class="f-pill">Drei gute Gründe</p>
     <h2>Das steht bei uns im Mittelpunkt.</h2>
   </div>
-  <div class="gruende-raster">
-    <article class="grund"><picture><source srcset="assets/img/gruende-teamgeist.webp" type="image/webp"><img src="assets/img/gruende-teamgeist.jpg" alt="Zwei Kolleginnen klatschen sich im Behandlungszimmer ab" width="1200" height="800" loading="lazy" decoding="async"></picture><div class="grund-text"><h3>Teamgeist</h3><p>Ein herzliches, engagiertes Team, das kollegial zusammenarbeitet und sich gegenseitig unterstützt.</p></div></article>
-    <article class="grund"><picture><source srcset="assets/img/gruende-qualitaet.webp" type="image/webp"><img src="assets/img/gruende-qualitaet.jpg" alt="Eine behandschuhte Hand greift nach einem zahnärztlichen Instrument" width="1200" height="800" loading="lazy" decoding="async"></picture><div class="grund-text"><h3>Qualität</h3><p>Ein breites Behandlungsspektrum von Kinderzahnmedizin bis Sofort-Implantologie, modern und patientenorientiert.</p></div></article>
-    <article class="grund"><picture><source srcset="assets/img/gruende-menschlichkeit.webp" type="image/webp"><img src="assets/img/gruende-menschlichkeit.jpg" alt="Zahnarzt überreicht einer Kollegin einen Blumenstrauß, beide lächeln" width="1200" height="800" loading="lazy" decoding="async"></picture><div class="grund-text"><h3>Menschlichkeit</h3><p>Eine Arbeitsatmosphäre, in der sich unsere Patienten und unser Team gleichermaßen wohlfühlen.</p></div></article>
+  <div class="f-gruende">
+    <article class="f-grund f-anim"><figure class="f-foto"><picture><source srcset="assets/img/gruende-teamgeist.webp" type="image/webp"><img src="assets/img/gruende-teamgeist.jpg" alt="Zwei Kolleginnen klatschen sich im Behandlungszimmer ab" width="1200" height="800" loading="lazy" decoding="async"></picture></figure><span class="f-nr">01</span><h3>Teamgeist</h3><p>Ein herzliches, engagiertes Team, das kollegial zusammenarbeitet und sich gegenseitig unterstützt.</p></article>
+    <article class="f-grund f-anim"><figure class="f-foto"><picture><source srcset="assets/img/gruende-qualitaet.webp" type="image/webp"><img src="assets/img/gruende-qualitaet.jpg" alt="Eine behandschuhte Hand greift nach einem zahnärztlichen Instrument" width="1200" height="800" loading="lazy" decoding="async"></picture></figure><span class="f-nr">02</span><h3>Qualität</h3><p>Ein breites Behandlungsspektrum von Kinderzahnmedizin bis Sofort-Implantologie, modern und patientenorientiert.</p></article>
+    <article class="f-grund f-anim"><figure class="f-foto"><picture><source srcset="assets/img/gruende-menschlichkeit.webp" type="image/webp"><img src="assets/img/gruende-menschlichkeit.jpg" alt="Zahnarzt überreicht einer Kollegin einen Blumenstrauß, beide lächeln" width="1200" height="800" loading="lazy" decoding="async"></picture></figure><span class="f-nr">03</span><h3>Menschlichkeit</h3><p>Eine Arbeitsatmosphäre, in der sich unsere Patienten und unser Team gleichermaßen wohlfühlen.</p></article>
   </div>
 </section>
 
-<section id="kontakt" class="abschnitt">
-  <div class="wrap zwei ci-paar ansprech-paar">
-    <figure class="bild-quer"><picture><source srcset="assets/img/ansprechpartner-quer.webp" type="image/webp"><img src="assets/img/ansprechpartner-quer.jpg" alt="Dr. Katrin Becker, Zahnärztin bei ZAHN &amp; GUT" width="1500" height="1000" loading="lazy" decoding="async"></picture></figure>
-    <div class="text-spalte">
-      <p class="dachzeile dachzeile-hell">Bei allen Fragen rund um die Bewerbung</p>
+<!-- ===== Bewerbung: Tipps und Ablauf ===== -->
+<section id="tipps" class="abschnitt f-bewerbung">
+  <div class="wrap">
+    <div class="f-kopf f-anim">
+      <p class="f-pill">Bewerbung</p>
+      <h2>So einfach geht's.</h2>
+      <p>Unterlagen parat? Falls nicht, kannst Du auch ohne Unterlagen Kontakt aufnehmen.</p>
+    </div>
+    <ol id="prozess" class="f-schritte f-anim" aria-label="Unser Bewerbungsprozess">
+      <li><span class="f-schritt-nr">1</span><h3>Unterlagencheck</h3><p>Nachdem wir Deine Bewerbung erhalten haben, starten wir den Unterlagencheck und melden uns in kurzer Zeit bei Dir.</p></li>
+      <li><span class="f-schritt-nr">2</span><h3>Kurzes Telefonat</h3><p>Im zweiten Schritt verabreden wir uns für ein kurzes Telefonat, um weitere Infos zu besprechen.</p></li>
+      <li><span class="f-schritt-nr">3</span><h3>Vor-Ort-Gespräch</h3><p>Im Nachgang terminieren wir ein persönliches Kennenlernen in unserer Praxis und schauen, ob wir zusammenpassen.</p></li>
+      <li><span class="f-schritt-nr">4</span><h3>Schnuppertag</h3><p>In unserer Praxis hast Du die Möglichkeit, Dir einen besseren Eindruck von unserem Team und unserer Arbeit zu verschaffen.</p></li>
+    </ol>
+    <h3 class="f-unterkopf f-anim">Tipps zur Bewerbung</h3>
+    <div class="f-tipps">
+      <div class="f-kachel f-anim"><span class="f-ikon"><img src="assets/img/icons/stift.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Anschreiben</h3><p>Wie bist Du auf uns aufmerksam geworden? Was macht Dich aus und warum bist Du die geeignete Besetzung für die Stelle?</p></div>
+      <div class="f-kachel f-anim"><span class="f-ikon"><img src="assets/img/icons/dokument.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Lebenslauf</h3><p>Ob ein tabellarischer Lebenslauf oder in Textform bleibt Dir überlassen. Wichtig ist uns, was die Aufgabenbereiche Deiner letzten Position waren.</p></div>
+      <div class="f-kachel f-anim"><span class="f-ikon"><img src="assets/img/icons/zeugnis.svg" alt="" width="48" height="48" loading="lazy"></span><h3>Zertifikate und Zeugnisse</h3><p>Es reicht vollkommen aus, wenn Du uns Deine letzten relevanten Zeugnisse zusendest. Wahlweise kannst Du auch noch Zertifikate mit anhängen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ansprechpartnerin ===== -->
+<section id="kontakt" class="wrap abschnitt">
+  <div class="f-kontakt f-anim">
+    <figure class="f-kontakt-foto"><picture><source srcset="assets/img/ansprechpartner.webp" type="image/webp"><img src="assets/img/ansprechpartner.jpg" alt="Dr. Katrin Becker, Zahnärztin bei ZAHN &amp; GUT" width="720" height="900" loading="lazy" decoding="async"></picture></figure>
+    <div class="f-kontakt-text">
+      <p class="f-pill f-pill-hell">Bei allen Fragen rund um die Bewerbung</p>
       <h2>Deine Ansprechpartnerin.</h2>
-      <p><strong>Dr. Katrin Becker</strong><br>Zahnärztin</p>
-      <ul class="kontakt-zeilen">
-        <li><svg class="ikon-klein" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l6 1 3 8-4 3a22 22 0 0 0 11 11l3-4 8 3 1 6c0 3-3 5-6 5C20 39 9 28 9 12c0-3 2-6 5-6z"/></svg><a href="tel:+4921329988426">02132 99 88 426</a></li>
-        <li><svg class="ikon-klein" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="4"/><path d="M7 13l17 13 17-13"/></svg><a href="mailto:dr.k.becker@zahnundgut.de">dr.k.becker@zahnundgut.de</a></li>
+      <p class="f-name"><strong>Dr. Katrin Becker</strong><span>Zahnärztin</span></p>
+      <ul class="f-kontakt-zeilen">
+        <li><a href="tel:+4921329988426"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l6 1 3 8-4 3a22 22 0 0 0 11 11l3-4 8 3 1 6c0 3-3 5-6 5C20 39 9 28 9 12c0-3 2-6 5-6z"/></svg>02132 99 88 426</a></li>
+        <li><a href="mailto:dr.k.becker@zahnundgut.de"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="4"/><path d="M7 13l17 13 17-13"/></svg>dr.k.becker@zahnundgut.de</a></li>
       </ul>
-      <div class="knoepfe">
-        <a class="knopf knopf-hell" href="mailto:dr.k.becker@zahnundgut.de?subject=Bewerbung">E-Mail schreiben</a>
+      <div class="f-knoepfe">
+        <a class="knopf knopf-hell" href="mailto:dr.k.becker@zahnundgut.de?subject=Bewerbung">E-Mail schreiben <svg class="f-pfeil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="knopf knopf-rand-hell" href="tel:+4921329988426">Anrufen</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tipps" class="wrap abschnitt">
-  <div class="abschnitt-kopf">
-    <p class="dachzeile">Bewerbung</p>
-    <h2>Tipps zur Bewerbung.</h2>
+<!-- ===== FAQ ===== -->
+<section id="faq" class="wrap abschnitt f-faq">
+  <div class="f-faq-seite f-anim">
+    <p class="f-pill">F.A.Q.</p>
+    <h2>Häufig gestellte Fragen.</h2>
+    <p>Deine Frage ist nicht dabei? Dann melde Dich einfach bei uns. Wir helfen Dir gerne weiter und freuen uns anschließend auf Deine Bewerbung.</p>
+    <a class="f-gross-link" href="tel:+4921329988426"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l6 1 3 8-4 3a22 22 0 0 0 11 11l3-4 8 3 1 6c0 3-3 5-6 5C20 39 9 28 9 12c0-3 2-6 5-6z"/></svg>02132 99 88 426</a>
   </div>
-  <div class="tipps-raster tipps-drei">
-    <div class="kachel"><img src="assets/img/icons/stift-weiss.svg" alt="" width="48" height="48" loading="lazy"><h3>Anschreiben</h3><p>Wie bist Du auf uns aufmerksam geworden? Was macht Dich aus und warum bist Du die geeignete Besetzung für die Stelle?</p></div>
-    <div class="kachel"><img src="assets/img/icons/dokument-weiss.svg" alt="" width="48" height="48" loading="lazy"><h3>Lebenslauf</h3><p>Ob ein tabellarischer Lebenslauf oder in Textform bleibt Dir überlassen. Wichtig ist uns, was die Aufgabenbereiche Deiner letzten Position waren.</p></div>
-    <div class="kachel"><img src="assets/img/icons/zeugnis-weiss.svg" alt="" width="48" height="48" loading="lazy"><h3>Zertifikate und Zeugnisse</h3><p>Es reicht vollkommen aus, wenn Du uns Deine letzten relevanten Zeugnisse zusendest. Wahlweise kannst Du auch noch Zertifikate mit anhängen.</p></div>
-  </div>
-</section>
-
-<section id="prozess" class="abschnitt flaeche">
-  <div class="wrap">
-    <div class="abschnitt-kopf">
-      <p class="dachzeile">So geht es weiter</p>
-      <h2>Unser Bewerbungsprozess.</h2>
-    </div>
-    <ol class="ablauf ablauf-gross">
-      <li><strong>Unterlagencheck</strong><span>Nachdem wir Deine Bewerbung erhalten haben, starten wir den Unterlagencheck und melden uns in kurzer Zeit bei Dir.</span></li>
-      <li><strong>Kurzes Telefonat</strong><span>Im zweiten Schritt verabreden wir uns für ein kurzes Telefonat, um weitere Infos zu besprechen.</span></li>
-      <li><strong>Vor-Ort-Gespräch</strong><span>Im Nachgang terminieren wir ein persönliches Kennenlernen in unserer Praxis und schauen, ob wir zusammenpassen.</span></li>
-      <li><strong>Schnuppertag</strong><span>In unserer Praxis hast Du die Möglichkeit, Dir einen besseren Eindruck von unserem Team und unserer Arbeit zu verschaffen.</span></li>
-    </ol>
-  </div>
-</section>
-
-<section id="faq" class="wrap abschnitt zwei faq-start">
-  <div>
-    <div class="abschnitt-kopf">
-      <p class="dachzeile">F.A.Q.</p>
-      <h2>Häufig gestellte Fragen.</h2>
-    </div>
-    <p class="klein-titel">Allgemeine Fragen</p>
+  <div class="f-faq-liste f-anim">
+    <p class="f-faq-gruppe">Allgemeine Fragen</p>
     <div class="faq-liste">
       <details open><summary>Kann ich mich initiativ bewerben?</summary><p>Du kannst Dich auch jederzeit initiativ bei uns bewerben. Wir lassen uns gerne von Deinen Fähigkeiten überzeugen.</p></details>
       <details><summary>Sind die Stellen auf der Webseite noch frei?</summary><p>Unsere Webseite ist immer auf dem neusten Stand, daher sind alle ausgeschriebenen Stellen aktuell.</p></details>
@@ -315,31 +335,24 @@
       <details><summary>Wie kann ich mich bewerben?</summary><p>In der jeweiligen Stellenanzeige findest Du ein Bewerbungsformular. Alternativ auch via E-Mail oder über den Postweg.</p></details>
       <details><summary>Wie relevant sind meine Noten?</summary><p>Grundsätzlich legen wir keinen großen Wert auf Noten, viel wichtiger ist uns die Person hinter der Bewerbung.</p></details>
     </div>
-    <p class="klein-titel">Fragen zur Ausbildung</p>
+    <p class="f-faq-gruppe">Fragen zur Ausbildung</p>
     <div class="faq-liste">
       <details><summary>Wann beginnt die Ausbildung?</summary><p>Der Startzeitpunkt der Ausbildung ist in der Stellenausschreibung festgehalten. Sollte er sich ändern, passen wir ihn entsprechend an.</p></details>
       <details><summary>Werden Azubis nach der Ausbildung übernommen?</summary><p>Wir schätzen engagierte und motivierte Teamkollegen sehr, daher ist eine Übernahme möglich.</p></details>
     </div>
   </div>
-  <aside class="faq-seite" aria-label="Kontakt">
-    <figure class="bild-quer"><picture><source srcset="assets/img/faq-empfang.webp" type="image/webp"><img src="assets/img/faq-empfang.jpg" alt="Mitarbeiterin telefoniert lächelnd am Empfang" width="1200" height="800" loading="lazy" decoding="async"></picture></figure>
-    <div class="kachel">
-      <h3>Du hast noch Fragen?</h3>
-      <p>Dann melde Dich einfach bei uns. Wir helfen Dir gerne weiter und freuen uns anschließend auf Deine Bewerbung.</p>
-      <p><a class="gross-link" href="tel:+4921329988426">02132 99 88 426</a></p>
-    </div>
-  </aside>
 </section>
 
-<section class="band band-hell">
-  <div class="wrap band-zeile">
+<!-- ===== Abschluss ===== -->
+<section class="wrap f-cta-band">
+  <div class="f-cta f-anim">
     <div>
       <h2>Bereit für Dein neues Team?</h2>
       <p>Unterlagen parat? Falls nicht, kannst Du auch ohne Unterlagen Kontakt aufnehmen.</p>
     </div>
-    <div class="knoepfe">
-      <a class="knopf" href="#stellen">Zu den Stellenangeboten</a>
-      <a class="knopf knopf-rand" href="tel:+4921329988426">Anrufen</a>
+    <div class="f-knoepfe">
+      <a class="knopf knopf-hell" href="#stellen">Zu den Stellenangeboten <svg class="f-pfeil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="knopf knopf-rand-hell" href="tel:+4921329988426">Anrufen</a>
     </div>
   </div>
 </section>
@@ -403,7 +416,7 @@
 <script src="assets/js/einwilligung.js?v=a00ceaa6" defer></script>
 <script src="assets/js/messung.js?v=e7f94acc" defer></script>
 <script src="assets/js/barrierefreiheit.js?v=6e360ef9" defer></script>
-<script src="assets/js/app.js?v=881cea18" defer></script>
+<script src="assets/js/app.js?v=f26b1b5d" defer></script>
 <script src="assets/js/statistik.js?v=57d46b9d" defer></script>
 </body>
 </html>

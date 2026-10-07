@@ -32,7 +32,7 @@
   }
 
   // Sanftes Einblenden
-  var ziele = d.querySelectorAll('.abschnitt .text-spalte, .bild-quer, .kachel, .abschnitt-kopf, .benefit, .grund, .stelle-zeile');
+  var ziele = d.querySelectorAll('.abschnitt .text-spalte, .bild-quer, .kachel, .abschnitt-kopf, .benefit, .grund, .stelle-zeile, .f-anim');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (e) {
       e.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('sichtbar'); io.unobserve(x.target); } });
@@ -53,6 +53,7 @@
 
   var parallax = ruhe ? [] : d.querySelectorAll('[data-parallax]');
   var kopfEl = d.querySelector('.kopf'), letzteY = window.scrollY, tick = false;
+  var fortschritt = d.querySelector('.f-fortschritt'), tiefe = ruhe ? [] : d.querySelectorAll('[data-tiefe]');
   function beimScrollen() {
     var y = window.scrollY, h = window.innerHeight;
     if (woerter) {
@@ -67,6 +68,12 @@
       var v = (r.top + r.height / 2 - h / 2) * -0.12;
       el.style.transform = 'translate3d(0,' + v.toFixed(1) + 'px,0) scale(1.12)';
     });
+    if (fortschritt) fortschritt.style.setProperty('--f-p', (y / Math.max(1, d.documentElement.scrollHeight - h)).toFixed(4));
+    if (!istRuhig()) tiefe.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > h + 200) return;
+      el.style.translate = '0 ' + ((r.top + r.height / 2 - h / 2) * parseFloat(el.getAttribute('data-tiefe'))).toFixed(1) + 'px';
+    }); else tiefe.forEach(function (el) { el.style.translate = ''; });
     if (kopfEl && !b.classList.contains('navi-offen')) kopfEl.classList.toggle('kopf-weg', y > letzteY && y > 400);
     letzteY = y; tick = false;
   }
@@ -75,7 +82,7 @@
 
   // Lichtkegel folgt der Maus, Knöpfe mit leichtem Magnet-Effekt
   if (feinzeiger && !ruhe) {
-    d.querySelectorAll('.stelle-zeile, .benefit, .kachel').forEach(function (k) {
+    d.querySelectorAll('.stelle-zeile, .benefit, .kachel, .f-kachel').forEach(function (k) {
       k.addEventListener('pointermove', function (e) {
         var r = k.getBoundingClientRect();
         k.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -91,6 +98,36 @@
       k.addEventListener('pointerleave', function () { k.style.transform = ''; });
     });
   }
+
+  // Zahlen zählen beim Einblenden hoch (bei „Bewegung reduzieren“ sofort der Endwert)
+  var zahlen = d.querySelectorAll('[data-zahl]');
+  if (zahlen.length && 'IntersectionObserver' in window && !istRuhig()) {
+    var zio = new IntersectionObserver(function (e) {
+      e.forEach(function (x) {
+        if (!x.isIntersecting) return;
+        zio.unobserve(x.target);
+        var el = x.target, ziel = +el.getAttribute('data-zahl'), start = null, dauer = 1400;
+        if (!ziel) return;
+        el.textContent = '0';
+        function schritt(t) {
+          if (start === null) start = t;
+          var a = Math.min((t - start) / dauer, 1), w = 1 - Math.pow(1 - a, 3);
+          el.textContent = String(Math.round(ziel * w));
+          if (a < 1) requestAnimationFrame(schritt);
+        }
+        requestAnimationFrame(schritt);
+      });
+    }, { threshold: .6 });
+    zahlen.forEach(function (z) { zio.observe(z); });
+  }
+
+  // Video: eigener Abspielknopf, danach die normalen Bedienelemente
+  d.querySelectorAll('.f-video').forEach(function (f) {
+    var v = f.querySelector('video'), k = f.querySelector('.f-play');
+    if (!v || !k) return;
+    v.controls = false;
+    k.addEventListener('click', function () { v.controls = true; f.classList.add('laeuft'); v.play(); });
+  });
 
   // FAQ: immer nur ein Eintrag offen
   d.querySelectorAll('.faq-liste details').forEach(function (det) {

@@ -51,6 +51,19 @@ Neu: Siegel „Top-Arbeitgeber 2025 / 2026“ (Dr. Right) von zahnundgut.de. Lau
 Weiße Schrift auf dem hellen Logo-Grün ist schlecht lesbar, deshalb Textboxen in #588010, Knöpfe in #6b9329
 mit großer Schrift; das helle Grün #97bf0d nur für Flächen, Linien und Marken.
 
+## Neue Gestaltung „2027“ (07.10.2026, Wunsch Awan und Kollege: „zu altbacken“)
+
+Richtung „hell & luftig“, Bewegung „spürbar, aber ruhig“ (Auswahl Awan). CI bleibt (Grün, Open Sans, Logo).
+Alles in `website/assets/css/frisch.css` (lädt nach stil.css/karriere.css); karriere.css enthält nur noch Grundbausteine.
+- Kopf als schwebende Glas-Leiste, Fortschrittsbalken oben.
+- Hero zweispaltig: große Überschrift mit gezeichnetem Strich unter „Herz“, Teamfoto mit langsamem Zoom, drei schwebende
+  Glas-Karten (4-Tage-Woche, Mi./Fr. ab 13 Uhr, kein Notdienst), weiche grüne Farbflächen im Hintergrund, Siegel klein darunter.
+- H1 jetzt „ZFA, ZMP, ZMF, DH & Azubi Jobs in Meerbusch / Zahnmedizin mit Herz.“ (statt „Zahnarzt Jobs“, es gibt keine Zahnarzt-Stelle).
+- Zahlen zählen beim Einblenden hoch, Fotos mit leichter Tiefe beim Scrollen, Karten heben sich unter der Maus.
+- Benefits als Bento-Raster, Stellen als Karten zweispaltig, Bewerbungsablauf als Zeitleiste, die sich beim Scrollen füllt.
+- Video mit eigenem Abspielknopf. Ansprechpartnerin als grüne Karte mit großem Foto.
+- Bei „Bewegung reduzieren“ (Gerät oder Barrierefreiheits-Knopf) steht alles still.
+
 ## Stellenseiten (07.10.2026, Wunsch Awan)
 
 Kopf ohne Hintergrundbild: grüne Fläche mit Logo-Schwüngen, links Text, rechts das Foto vollständig (4:3).
