@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Stammdaten des Kunden. Alles, was hier steht, landet auf der Seite und in den Google-Daten. Nichts erfinden – lieber leer lassen und nachfragen. Quellen: alte Karriereseite karriere-zahnundgut.de (WordPress/Divi, ausgelesen 07.10.2026), Hauptseite zahnundgut.de (Kontakt, Sprechzeiten, Schriften, Farben), Vorgaben Awan Tofik im Chat. Offene Punkte: doku/entscheidungen.md.",
+  "_hinweis": "Stammdaten des Kunden. Alles, was hier steht, landet auf der Seite und in den Google-Daten. Nichts erfinden – lieber leer lassen und nachfragen. Quellen: alte Karriereseite karriere-zahnundgut.de (WordPress/Divi, ausgelesen 07.10.2026), Hauptseite zahnundgut.de (Kontakt, Sprechzeiten, Schriften, Farben), Vorgaben Awan Tofik im Chat (Foto Dr. Becker = Bild 1, bestätigt 07.10.2026; Meta-Pixel 1382645662547987 laut Awan). Offene Punkte: doku/entscheidungen.md.",
   "kennung": "zahnundgut",
   "firma": "ZAHN & GUT",
   "firma_lang": "Zahnarztpraxis ZAHN & GUT, Dr. Katrin Becker, Dr. Janette Müller, Dr. Oliver Becker, Meerbusch",
@@ -24,13 +24,12 @@
     }
   ],
   "ansprechpartner": {
-    "_hinweis": "Kein Foto: Welches Bild Dr. Becker zeigt, ist nicht bestätigt. Erst nach Bestätigung 'foto' eintragen.",
     "titel": "Deine Ansprechpartnerin",
     "name": "Dr. Katrin Becker",
     "rolle": "Zahnärztin",
     "telefon": "02132 99 88 426",
     "email": "dr.k.becker@zahnundgut.de",
-    "foto": ""
+    "foto": "assets/img/ansprechpartner.jpg"
   },
   "bewerbungen": {
     "_hinweis": "Empfänger laut Awan 07.10.2026: dr.k.becker@zahnundgut.de (wie auf der alten Karriereseite). Absender muss vor dem Livegang als Postfach auf der Karriere-Domain existieren.",

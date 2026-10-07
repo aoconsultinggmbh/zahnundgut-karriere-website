@@ -211,11 +211,11 @@
         '<span class="ein-kicker">Datenschutzeinstellungen</span>' +
         '<h2 id="ein-titel">Sie entscheiden, was geladen wird</h2>' +
         '<p id="ein-text">Diese Website nutzt nur, was für den Betrieb nötig ist. Zusätzlich können wir ' +
-          (namen || 'externe Inhalte') + ' einbinden. Diese Inhalte stammen von Google. ' +
-          'Beim Laden wird Ihre IP-Adresse an Google übertragen, deshalb fragen wir vorher.</p>' +
+          (namen || 'externe Inhalte') + ' einbinden. ' +
+          (konf.hinweis || 'Diese Inhalte stammen von Google. Beim Laden wird Ihre IP-Adresse an Google übertragen, deshalb fragen wir vorher.') + '</p>' +
         '<p class="ein-fein">Ihre Wahl gilt 12 Monate und lässt sich jederzeit über ' +
-          '„Cookie-Einstellungen" in der Fußzeile ändern. Es werden keine Werbe- oder ' +
-          'Analysedienste eingesetzt. Mehr dazu in der ' +
+          '„Cookie-Einstellungen" in der Fußzeile ändern. ' +
+          (konf.hinweisFein || 'Es werden keine Werbe- oder Analysedienste eingesetzt. ') + 'Mehr dazu in der ' +
           '<a href="' + LINK_DS + '">Datenschutzerklärung</a>.</p>' +
       '</div>' +
       '<div class="ein-fuss">' +

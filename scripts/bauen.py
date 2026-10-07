@@ -260,6 +260,7 @@ def skripte(praefix: str) -> str:
         f'<script src="{praefix}assets/js/konfiguration.js"></script>',
         f'<script src="{praefix}assets/js/ao-konfiguration.js" defer></script>',
         f'<script src="{praefix}assets/js/einwilligung.js" defer></script>',
+        f'<script src="{praefix}assets/js/messung.js" defer></script>',
         f'<script src="{praefix}assets/js/barrierefreiheit.js" defer></script>',
         f'<script src="{praefix}assets/js/app.js" defer></script>',
         f'<script src="{praefix}assets/js/statistik.js" defer></script>'])

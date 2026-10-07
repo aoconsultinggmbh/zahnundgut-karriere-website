@@ -32,8 +32,11 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 - **Status:** wie auf der alten Seite: Ausbildung und ZFA „Offen“, ZMP/ZMF/DH und ZMV „Initiativ“.
 - **Nicht übernommen:** Wistia-Video im Abschnitt „Über uns“ (externer Dienst, AO-Standard lädt nichts von außen),
   Google Analytics, Meta-Pixel, Google reCAPTCHA, Zapier, Borlabs Cookie, Google Maps.
-- **Kein Foto** bei der Ansprechpartnerin: Welches Bild Dr. Katrin Becker zeigt, ist nicht bestätigt. Stattdessen ein Bild
-  des Behandlungszimmers.
+- **Foto Dr. Katrin Becker** = Bild 1 (von Awan per Screenshot der alten Seite bestätigt, 07.10.2026).
+- **Meta-Pixel** 1382645662547987 (laut Awan): lädt erst nach Einwilligung (`messung.js`, Kategorie „Marketing“),
+  meldet auf danke.html zusätzlich `SubmitApplication`. In der Vorschau und lokal wird Meta nie geladen, nur das Banner gezeigt.
+  Banner-Text in `ao-konfiguration.js` (`hinweis`), einwilligung.js dafür um `hinweis`/`hinweisFein` erweitert.
+- **Google Analytics** entfällt (Awan), Besucherzahlen über Matomo cookiefrei. **Zapier** war nie in Betrieb (Awan), entfällt.
 
 ## Bilder (alte Karriereseite, Nummer = Zahn-und-Gut-Karriere-<Nr>.webp)
 
@@ -44,25 +47,19 @@ Stand 07.10.2026, Awan Tofik mit Claude.
 | team | 62 | Team (Pausenraum) |
 | leitsatz | 59 | Hintergrund Leitsatz |
 | gruende-teamgeist / -qualitaet / -menschlichkeit | 35 / 44 / 56 | Drei Gründe |
-| kontakt-praxis | 52 | Ansprechpartnerin (Behandlungszimmer, ohne Personen) |
+| ansprechpartner(-quer) | 1 | Dr. Katrin Becker (bestätigt) |
 | faq-empfang | 12 | FAQ |
 | stelle-ausbildung / -zfa / -zmp / -zmv | 40 / 19 / 38 / 13 | Kopfbild der Stellenseiten |
 
-Nicht verwendet: 1, 15, 25, 26, 27, 29, 31, 48, 50, 54.
+Nicht verwendet: 15, 25, 26, 27, 29, 31, 48, 50, 52, 54.
 
 ## Offen vor dem Livegang
 
-- [ ] **Google Analytics und Meta-Pixel:** Die alte Seite hat beides (laut Datenschutz). Wenn die Praxis oder AO damit
-      Anzeigen misst (z. B. Recruiting-Kampagnen über Meta), Kennungen in `assets/js/ao-konfiguration.js` eintragen
-      (dann erscheint das Einwilligungsbanner) und den Datenschutz ergänzen. Sonst entfällt beides ersatzlos.
-- [ ] **Zapier:** Die alte Seite schickt Bewerbungen über Zapier weiter (laut Datenschutz). Klären, wohin (Bewerbertool, Tabelle?).
-      Die neue Seite schickt nur eine Mail an dr.k.becker@zahnundgut.de.
-- [ ] **Ausbildung 2026:** auf der alten Seite noch als „Neu, 2026“ geführt. Hat vermutlich schon begonnen, auf 2027 umstellen?
+- [x] Ausbildung auf 2027 umgestellt (Awan 07.10.2026).
 - [ ] **Hero-Überschrift** „… & Zahnarzt Jobs“ wie auf der alten Seite, es gibt aber keine Zahnarzt-Stelle.
 - [ ] Postfach **jobs@karriere-zahnundgut.de** als Absender anlegen (oder Absender in kunde.json ändern).
 - [ ] Domain karriere-zahnundgut.de: Wo liegt sie, wo liegen die Postfächer (MX)? Alte Seite liegt bei Raidboxes.
-- [ ] Datenschutz von der Praxis freigeben lassen (neu geschrieben, weil Hoster und Dienste wechseln).
+- [ ] Datenschutz von der Praxis freigeben lassen (neu geschrieben, weil Hoster und Dienste wechseln; Meta-Pixel jetzt mit Einwilligung).
 - [ ] Gehalt nur mit Freigabe der Praxis (Google zeigt Anzeigen mit Gehalt besser).
-- [ ] Foto von Dr. Katrin Becker: Welches Bild? Dann `ansprechpartner.foto` in kunde.json setzen.
 - [ ] Matomo-Eintrag anlegen, `matomo_id` in kunde.json eintragen.
 - [ ] Wistia-Video: falls gewünscht, als MP4 lokal einbauen (wie bei Whiteblick), nicht als Einbettung.

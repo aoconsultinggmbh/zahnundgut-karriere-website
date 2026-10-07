@@ -8,7 +8,7 @@ return [
   '_max_dateien' => 3,
   '_max_mb' => 10,
   '_loeschfrist_monate' => 6,
-  "ausbildung-zfa-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "Ausbildung als ZFA / Zahnmedizinische Fachangestellte (m/w/d) 2026", 'standort' => "Meerbusch"],
+  "ausbildung-zfa-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "Ausbildung als ZFA / Zahnmedizinische Fachangestellte (m/w/d) 2027", 'standort' => "Meerbusch"],
   "zfa-behandlungsassistenz-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZFA / Zahnmedizinische Fachangestellte / Zahnarzthelferin als Behandlungsassistenz (m/w/d)", 'standort' => "Meerbusch"],
   "zmp-zmf-dh-prophylaxe-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZMP / ZMF / DH / Zahnmedizinische Prophylaxeassistentin / Dentalhygienikerin (m/w/d)", 'standort' => "Meerbusch"],
   "zmv-praxismanagerin-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZMV / Praxismanagerin (m/w/d): Zahnmedizinische Verwaltungsangestellte für Praxisorganisation und Abrechnung", 'standort' => "Meerbusch"],
