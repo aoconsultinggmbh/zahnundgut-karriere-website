@@ -55,7 +55,9 @@ mit großer Schrift; das helle Grün #97bf0d nur für Flächen, Linien und Marke
 
 Richtung „hell & luftig“, Bewegung „spürbar, aber ruhig“ (Auswahl Awan). CI bleibt (Grün, Open Sans, Logo).
 Alles in `website/assets/css/frisch.css` (lädt nach stil.css/karriere.css); karriere.css enthält nur noch Grundbausteine.
-- Kopf als schwebende Glas-Leiste, Fortschrittsbalken oben.
+- Kopf (zweite Fassung, Awan: Glas-Pille „sieht nach Standard-KI aus“): volle Breite, grünes Logo-Band oben, Menü in
+  Open Sans Condensed mit Nummern 01–05 und Schwung-Unterstrich, Telefon, eckig-angeschnittener Knopf „Offene Stellen“;
+  am Handy grünes Vollbild-Menü. „Zur Praxis“ nur noch im Fuß. Hero breiter (1760 px). Fortschrittsbalken oben.
 - Hero zweispaltig: große Überschrift mit gezeichnetem Strich unter „Herz“, Teamfoto mit langsamem Zoom, drei schwebende
   Glas-Karten (4-Tage-Woche, Mi./Fr. ab 13 Uhr, kein Notdienst), weiche grüne Farbflächen im Hintergrund, Siegel klein darunter.
 - H1 jetzt „ZFA, ZMP, ZMF, DH & Azubi Jobs in Meerbusch / Zahnmedizin mit Herz.“ (statt „Zahnarzt Jobs“, es gibt keine Zahnarzt-Stelle).

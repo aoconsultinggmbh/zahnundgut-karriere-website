@@ -62,40 +62,84 @@ a{color:var(--g-knopf)}
 .f-play-klein{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--tint);color:var(--g-knopf)}
 .f-play-klein svg{width:13px;height:13px;margin-left:2px}
 
-/* ---------- Kopf: schwebende Glas-Leiste ---------- */
-.kopf,.startseite .kopf{position:sticky;top:12px;z-index:100;margin:12px auto 0;max-width:1440px;width:calc(100% - 24px);
-  background:rgba(255,255,255,.72);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);
-  border:1px solid rgba(255,255,255,.8);border-radius:999px;box-shadow:0 8px 30px -12px rgba(35,38,31,.18);transition:transform .35s var(--weich),box-shadow .3s}
-.kopf-zeile{min-height:68px;padding:0 10px 0 26px!important;max-width:none}
-.logo img{height:38px}
-.hauptnavi{gap:6px}
-.hauptnavi a{font-family:var(--schrift);font-stretch:100%;font-size:15px;font-weight:600;text-transform:none;letter-spacing:0;color:var(--ink);
-  padding:10px 16px;border-radius:999px;transition:background .2s,color .2s}
-.hauptnavi a::after{display:none}
-.hauptnavi a:hover{background:var(--tint);color:var(--g-dunkel)}
-.kopf-knopf{padding:11px 20px;font-size:15px}
-.kopf-weg{transform:translateY(-130%)}
+/* ---------- Kopf: volle Breite, grünes Logo-Band oben, Menü wie auf zahnundgut.de ----------
+   Bewusst keine schwebende Glas-Pille (Awan 07.10.2026: „sieht nach Standard-KI aus“).
+   Menü in Open Sans Condensed, Versalien, gesperrt, mit Nummern; am Handy ein grünes Vollbild-Menü. */
+.kopf,.startseite .kopf{position:sticky;top:0;z-index:100;margin:0;width:100%;max-width:none;border:0;border-radius:0;
+  background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 1px 0 var(--linie);transition:transform .35s var(--weich),box-shadow .3s}
+.kopf-band{height:5px;background:var(--g-logo) url("../img/logo-band.svg") center/cover no-repeat}
+.kopf-zeile{display:flex;align-items:center;gap:28px;min-height:84px;transition:min-height .3s var(--weich)}
+.kopf-klein{box-shadow:0 10px 30px -18px rgba(35,38,31,.35)}
+.kopf-klein .kopf-zeile{min-height:68px}
+.logo img{height:42px;transition:height .3s var(--weich)}
+.kopf-klein .logo img{height:36px}
+.hauptnavi{display:flex;gap:4px;margin:0 auto}
+.hauptnavi a{position:relative;display:flex;align-items:baseline;gap:6px;font-family:var(--schrift);font-stretch:75%;font-size:18px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--ink);padding:10px 14px;border-radius:0;background:none;text-decoration:none}
+.hauptnavi a:hover{background:none;color:var(--g-knopf)}
+.navi-nr{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--g-logo);transform:translateY(-6px)}
+/* Unterstrich als Schwung aus dem Logo, zeichnet sich beim Darüberfahren */
+.hauptnavi a::after{content:"";display:block;position:absolute;left:14px;right:14px;bottom:2px;height:8px;transform:scaleX(0);transform-origin:0 50%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M1 6 C 30 1, 70 1, 99 5' fill='none' stroke='%2395c11f' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  transition:transform .35s var(--weich)}
+.hauptnavi a:hover::after,.hauptnavi a[aria-current]::after{transform:scaleX(1)}
+.navi-kontakt{display:none}
+.kopf-tel{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.kopf-tel svg{width:34px;height:34px;padding:8px;border-radius:50%;background:var(--tint);color:var(--g-knopf);transition:background .25s,color .25s}
+.kopf-tel:hover svg{background:var(--g-knopf);color:#fff}
+.kopf-jobs{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--g-knopf);color:#fff;text-decoration:none;
+  font-stretch:75%;font-size:17px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+  clip-path:polygon(0 0,100% 0,100% 100%,12px 100%,0 calc(100% - 12px));transition:background .25s}
+.kopf-jobs:hover{background:var(--g-dunkel);color:#fff}
+.kopf-jobs .f-live{background:#d9ef8a}
+.navi-schalter{display:none;align-items:center;gap:10px;background:none;border:0;padding:10px 4px;cursor:pointer;margin-left:0;color:var(--ink)}
+.navi-schalter span{background:none;width:auto;height:auto;margin:0}
+.navi-text{font-stretch:75%;font-weight:700;font-size:17px;letter-spacing:.12em;text-transform:uppercase}
+.navi-striche{display:grid!important;gap:6px;width:28px!important}
+.navi-striche i{display:block;height:2px;background:currentColor;transition:transform .3s var(--weich),width .3s}
+.navi-striche i:last-child{width:70%;justify-self:end}
+.kopf-weg{transform:translateY(-110%)}
+@media (max-width:1300px){.kopf-tel span{display:none}}
 @media (max-width:1100px){
-  .kopf,.startseite .kopf{border-radius:24px}
-  .hauptnavi{inset:auto 0 auto 0;top:calc(100% + 8px);position:absolute;border-radius:24px;padding:10px;box-shadow:var(--schatten-gross);background:#fff}
-  .hauptnavi a{font-size:18px;padding:14px 18px;border-bottom:0}
-  .navi-offen .kopf{background:#fff}
+  .navi-schalter{display:inline-flex;position:relative;z-index:3}
+  .kopf-tel{margin-left:auto}
+  .kopf-jobs{display:none}
+  .hauptnavi{display:flex;position:fixed;inset:0;z-index:2;margin:0;flex-direction:column;justify-content:center;gap:2px;padding:110px 28px 40px;
+    background:linear-gradient(150deg,var(--g-knopf) 0%,var(--g-dunkel) 100%);box-shadow:none;border-radius:0;
+    opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .35s var(--weich),transform .35s var(--weich),visibility 0s .35s}
+  .hauptnavi.offen{opacity:1;visibility:visible;transform:none;transition:opacity .35s var(--weich),transform .35s var(--weich)}
+  .hauptnavi a{font-size:clamp(34px,9vw,52px);letter-spacing:.06em;color:#fff;padding:6px 0;border:0}
+  .hauptnavi a:hover{color:#d9ef8a}
+  .hauptnavi a::after{display:none}
+  .navi-nr{font-size:14px;color:#d9ef8a;transform:translateY(-14px)}
+  .navi-kontakt{display:block;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.25)}
+  .navi-kontakt p{color:rgba(255,255,255,.8);margin:0 0 6px}
+  .navi-kontakt a{font-family:var(--schrift);font-stretch:100%;font-size:18px;text-transform:none;letter-spacing:0;padding:2px 0}
+  .navi-offen{overflow:hidden}
+  .navi-offen .kopf{background:transparent;box-shadow:none}
+  .navi-offen .kopf .logo,.navi-offen .kopf-tel{position:relative;z-index:3;filter:brightness(0) invert(1)}
+  .navi-offen .navi-schalter{color:#fff}
+  .navi-offen .navi-striche i:first-child{transform:translateY(4px) rotate(45deg)}
+  .navi-offen .navi-striche i:last-child{width:100%;transform:translateY(-4px) rotate(-45deg)}
+  .navi-offen .kopf-band{opacity:0}
 }
-@media (max-width:600px){.kopf-zeile{min-height:60px;padding:0 8px 0 18px!important}.logo img{height:30px}}
+@media (max-width:600px){.kopf-zeile{min-height:68px;gap:14px}.logo img{height:32px}.navi-text{display:none}}
 
 /* Fortschrittsbalken oben */
 .f-fortschritt{position:fixed;left:0;top:0;height:3px;width:100%;z-index:200;transform-origin:0 50%;transform:scaleX(var(--f-p,0));
   background:linear-gradient(90deg,var(--g-logo),var(--g-knopf))}
 
 /* ---------- Hero ---------- */
-.f-hero{position:relative;overflow:hidden;padding:clamp(40px,6vw,90px) 0 clamp(50px,6vw,90px);margin-top:-80px;padding-top:calc(80px + clamp(40px,6vw,90px))}
+.f-hero{position:relative;overflow:hidden;padding:clamp(40px,6vw,90px) 0 clamp(50px,6vw,90px)}
+/* Hero etwas breiter als der übrige Inhalt (Wunsch Awan) */
+.f-hero .wrap{max-width:1760px}
 .f-blobs{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .f-blobs span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
 .f-blobs span:nth-child(1){width:540px;height:540px;background:#d9ec9c;left:-140px;top:-80px;animation:f-blob 18s ease-in-out infinite}
 .f-blobs span:nth-child(2){width:460px;height:460px;background:#eef6d6;right:-80px;top:40px;animation:f-blob 22s ease-in-out infinite reverse}
 .f-blobs span:nth-child(3){width:380px;height:380px;background:#cfe57e;left:45%;bottom:-180px;opacity:.35;animation:f-blob 26s ease-in-out infinite}
 @keyframes f-blob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,25px) scale(.95)}}
-.f-hero-raster{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(36px,5vw,80px);align-items:center}
+.f-hero-raster{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(36px,5vw,80px);align-items:center}
 .f-hero h1{margin:0 0 22px;max-width:none}
 .f-h1-klein{display:block;font-size:clamp(17px,1.5vw,21px);font-weight:600;letter-spacing:0;color:var(--g-dunkel);margin-bottom:14px}
 .f-h1-gross{display:block;font-size:clamp(48px,7vw,104px);font-weight:800;line-height:.98;letter-spacing:-.04em;color:var(--ink)}
@@ -419,3 +463,13 @@ html.bf-ruhe .f-markiert path{animation:none;stroke-dashoffset:0}
   .f-zahl span{font-size:14px}
   .f-h1-gross{font-size:46px}
 }
+
+/* Kopf: Feinschliff */
+.hauptnavi a{white-space:nowrap}
+@media (max-width:1400px) and (min-width:1101px){.hauptnavi a{padding:10px 9px;font-size:16px}.kopf-zeile{gap:18px}}
+.navi-offen .navi-schalter span{transform:none!important;opacity:1!important;background:none}
+.navi-offen .navi-striche i{background:currentColor}
+@media (max-width:1100px){.navi-offen .kopf-tel{visibility:hidden}}
+.f-h1-gross{font-size:clamp(46px,5.6vw,104px)}
+.navi-offen .kopf .navi-schalter span{background:none!important}
+.navi-offen .kopf .navi-striche i{background:#fff!important}

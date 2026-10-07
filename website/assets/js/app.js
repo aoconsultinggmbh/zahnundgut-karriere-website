@@ -74,6 +74,7 @@
       if (r.bottom < -200 || r.top > h + 200) return;
       el.style.translate = '0 ' + ((r.top + r.height / 2 - h / 2) * parseFloat(el.getAttribute('data-tiefe'))).toFixed(1) + 'px';
     }); else tiefe.forEach(function (el) { el.style.translate = ''; });
+    if (kopfEl) kopfEl.classList.toggle('kopf-klein', y > 20);
     if (kopfEl && !b.classList.contains('navi-offen')) kopfEl.classList.toggle('kopf-weg', y > letzteY && y > 400);
     letzteY = y; tick = false;
   }
