@@ -362,3 +362,16 @@ html.ruhig .aussage-bild .aussage-text span,html.bf-ruhe .aussage-bild .aussage-
 .hero-unterzeile{margin-bottom:1rem}
 @media (max-width:760px){.hero{min-height:calc(100svh - 68px)}.hero-inhalt{padding-left:12px;padding-right:12px}}
 @media (max-width:600px){.hero-box h1,.hero h1{font-size:24px}.hero-unterzeile{font-size:17px}}
+
+/* Wunsch Awan 07.10.2026: Inhalt überall 1400 px breit, Bilder so hoch wie die grünen Boxen */
+.wrap{max-width:1480px}
+@media (max-width:899px){.wrap{max-width:1440px}}
+.ci-paar{max-width:1480px;align-items:stretch}
+.ci-paar .bild-quer{height:100%;min-height:100%}
+.ci-paar .bild-quer picture{display:block;height:100%}
+.ci-paar .bild-quer img{height:100%;width:100%;aspect-ratio:auto;object-fit:cover}
+.ansprech-paar .bild-quer img{object-position:50% 20%}
+@media (max-width:900px){.ci-paar .bild-quer,.ci-paar .bild-quer picture{height:auto}.ci-paar .bild-quer img{height:auto;aspect-ratio:3/2}}
+.stellen-liste,.benefits-raster{max-width:none}
+#tipps>*{max-width:1480px;padding-left:40px;padding-right:40px}
+@media (max-width:899px){#tipps>*{padding-left:20px;padding-right:20px}}
