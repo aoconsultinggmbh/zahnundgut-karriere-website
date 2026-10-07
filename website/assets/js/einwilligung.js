@@ -215,7 +215,7 @@
           (konf.hinweis || 'Diese Inhalte stammen von Google. Beim Laden wird Ihre IP-Adresse an Google übertragen, deshalb fragen wir vorher.') + '</p>' +
         '<p class="ein-fein">Ihre Wahl gilt 12 Monate und lässt sich jederzeit über ' +
           '„Cookie-Einstellungen" in der Fußzeile ändern. ' +
-          (konf.hinweisFein || 'Es werden keine Werbe- oder Analysedienste eingesetzt. ') + 'Mehr dazu in der ' +
+          (konf.hinweisFein || 'Besuche zählen wir ohne Cookies mit Matomo, dabei wird nichts auf Ihrem Gerät gespeichert. ') + 'Mehr dazu in der ' +
           '<a href="' + LINK_DS + '">Datenschutzerklärung</a>.</p>' +
       '</div>' +
       '<div class="ein-fuss">' +
