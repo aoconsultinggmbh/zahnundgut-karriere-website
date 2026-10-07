@@ -1,0 +1,111 @@
+{
+  "standort": "meerbusch",
+  "befristung": null,
+  "gehalt": {
+    "_hinweis": "Nur nach Freigabe der Praxis eintragen.",
+    "min": null,
+    "max": null,
+    "waehrung": "EUR",
+    "einheit": "MONTH"
+  },
+  "erfahrung_monate": null,
+  "bewerbungen_an": [],
+  "ansprechpartner": null,
+  "veroeffentlicht": "2026-10-07",
+  "gueltig_bis": "2026-11-21",
+  "_datum_hinweis": "veroeffentlicht und gueltig_bis setzt scripts/stellen-aktualisieren.py monatlich neu. Von Hand nur beim Anlegen eintragen.",
+  "arbeitszeit": null,
+  "einleitung": "Wir sind ZAHN & GUT, eine moderne Gemeinschaftspraxis in Meerbusch. Bei uns stehen Teamgeist, Qualität und Menschlichkeit im Mittelpunkt. Wir bieten ein breites Behandlungsspektrum, von Zahnmedizin für Kinder bis Sofort-Implantologie, und schaffen eine Arbeitsatmosphäre, in der sich sowohl unsere Patienten als auch unser Team wohlfühlen.",
+  "status": "initiativ",
+  "kennung": "zmv-praxismanagerin-meerbusch",
+  "_hinweis": "Texte 1:1 von der alten Karriereseite (Stand 07.10.2026). Dort als 'initiativ' geführt, mit Initiativformular (Wunschbereich, Berufserfahrung).",
+  "alte_adresse": "/job/zmv-praxismanagerin-m-w-d-zahnmedizinische-verwaltungsangestellte-fuer-praxisorganisation-abrechnung/",
+  "titel": "ZMV / Praxismanagerin (m/w/d): Zahnmedizinische Verwaltungsangestellte für Praxisorganisation und Abrechnung",
+  "seo_titel": "ZMV / Praxismanagerin Meerbusch (m/w/d) | ZAHN & GUT",
+  "titel_kurz": "ZMV / Praxismanagerin",
+  "reihenfolge": 4,
+  "beschaeftigungsart": [
+    "VOLLZEIT",
+    "TEILZEIT"
+  ],
+  "beginn": "nach Vereinbarung",
+  "kurz": "Organisation und Abrechnung in einer Hand: Du leitest die Praxisverwaltung, rechnest nach BEMA und GOZ ab und entwickelst die Praxis mit uns weiter.",
+  "aufgaben": [
+    "Eigenständige Leitung und Organisation der Praxisverwaltung",
+    "Erstellung, Bearbeitung und Abrechnung von Heil- und Kostenplänen (BEMA, GOZ, BEL, BEB)",
+    "Kommunikation mit Krankenkassen, Patienten und externen Partnern zu abrechnungsrelevanten Themen",
+    "Optimierung von Praxisabläufen und Unterstützung bei administrativen Aufgaben",
+    "Durchführung und Überwachung von Qualitätsmanagement, Hygiene- und Arbeitsschutzmaßnahmen",
+    "Mitwirkung an der strategischen Weiterentwicklung der Praxis"
+  ],
+  "profil": [
+    "Abgeschlossene Ausbildung als ZFA / Zahnmedizinische Fachangestellte / Zahnarzthelferin (m/w/d)",
+    "Weiterbildung zur ZMV (Zahnmedizinische Verwaltungsassistentin) oder Praxismanagerin (m/w/d) von Vorteil",
+    "Berufserfahrung in der Praxisorganisation und/oder Abrechnung wünschenswert",
+    "Fundierte Kenntnisse im Bereich BEMA / GOZ sowie im Umgang mit Abrechnungssoftware",
+    "Organisationstalent und Verantwortungsbewusstsein"
+  ],
+  "qualifikation_erforderlich": "Abgeschlossene Ausbildung als ZFA / Zahnmedizinische Fachangestellte / Zahnarzthelferin (m/w/d)",
+  "wir_bieten": [
+    "Attraktive Bezahlung",
+    "Wertgutscheine oder Einkaufsgutscheine",
+    "Weihnachtsgeld",
+    "Jahresbonus",
+    "Team Frühstück",
+    "Regelmäßige Teambesprechungen",
+    "Mitarbeiterevents",
+    "Jobticket",
+    "Fahrtkostenzuschüsse",
+    "Betriebliche Altersvorsorge",
+    "Selbstverständlich: Wasser, Süßgetränke, Kaffee, Obst, Süßigkeiten",
+    "Einarbeitungsplan",
+    "Weiterbildungsmöglichkeiten",
+    "Karrieremöglichkeiten",
+    "Wiedereinsteiger und Berufseinsteiger sind willkommen",
+    "Teilzeit Möglichkeiten",
+    "4-Tage-Woche",
+    "Bei uns kannst Du mittwochs und freitags bereits um 13 Uhr in den Feierabend gehen",
+    "Gute Parksituation",
+    "Gute Verkehrsanbindung",
+    "Klimatisierter Arbeitsbereich",
+    "Kein Notdienst, kein Wochenenddienst"
+  ],
+  "formular_zusatzfragen": [
+    {
+      "name": "wunschbereich",
+      "frage": "Dein Wunschbereich",
+      "typ": "auswahl",
+      "optionen": [
+        "Praxismanagement",
+        "Abrechnung",
+        "Beides"
+      ],
+      "pflicht": false
+    },
+    {
+      "name": "erfahrung",
+      "frage": "Wie viele Jahre Berufserfahrung hast Du?",
+      "typ": "auswahl",
+      "optionen": [
+        "Keine Erfahrung",
+        "1 bis 3 Jahre",
+        "3 bis 5 Jahre",
+        "Mehr als 5 Jahre"
+      ],
+      "pflicht": false
+    },
+    {
+      "name": "umfang",
+      "frage": "Vollzeit oder Teilzeit?",
+      "typ": "auswahl",
+      "optionen": [
+        "Vollzeit",
+        "Teilzeit",
+        "Bin noch offen"
+      ],
+      "pflicht": false
+    }
+  ],
+  "bild": "assets/img/stelle-zmv.jpg",
+  "bild_alt": "Mitarbeiterin am Schreibtisch in der Praxisverwaltung"
+}

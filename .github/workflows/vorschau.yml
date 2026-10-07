@@ -1,0 +1,63 @@
+# Vorschau: baut aus dem Zweig main die Seite und veröffentlicht sie auf GitHub Pages
+# unter https://<kunde>-karriere.vorschau.ao-consult.de – mit noindex, damit Google sie nicht findet.
+name: Vorschau
+
+on:
+  push:
+    branches: [main]
+    paths: ["website/**", "stellen/**", "kunde.json", "vorlagen/**", "scripts/**", ".github/workflows/vorschau.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: vorschau
+  cancel-in-progress: true
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stellen bauen und prüfen
+        run: |
+          python3 scripts/bauen.py
+          python3 scripts/pruefen.py || echo "::warning::Prüfung meldet Fehler – vor dem Livegang beheben"
+
+      - name: Vorschau-Fassung erzeugen (noindex, Hinweisleiste, Vorschau-Domain)
+        run: |
+          rm -rf _vorschau && cp -r website _vorschau
+          DOMAIN=$(python3 -c "import json;print(json.load(open('kunde.json'))['domain'])")
+          VORSCHAU=$(python3 -c "import json;print(json.load(open('kunde.json'))['vorschau_domain'])")
+          HAUPT=$(python3 -c "import json;print(json.load(open('kunde.json')).get('hauptseite',''))")
+          HAUPT_VORSCHAU=$(python3 -c "import json;print(json.load(open('kunde.json')).get('hauptseite_vorschau',''))")
+          echo "$VORSCHAU" > _vorschau/CNAME
+          printf 'User-agent: *\nDisallow: /\n' > _vorschau/robots.txt
+          rm -f _vorschau/indeed-feed.xml _vorschau/sitemap.xml
+          # HTML-Seiten immer mit find suchen, nie mit *.html (Unterordner!)
+          while IFS= read -r f; do
+            sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#' "$f"
+            sed -i "s#https://$DOMAIN#https://$VORSCHAU#g" "$f"
+            # Links zur Hauptseite zeigen in der Vorschau auf die Vorschau der neuen Hauptseite (die alte Seite hat andere Adressen)
+            if [ -n "$HAUPT_VORSCHAU" ]; then sed -i "s#$HAUPT#$HAUPT_VORSCHAU#g" "$f"; fi
+            sed -i 's#<body\([^>]*\)>#<body\1>\n<div class="vorschau-hinweis">Vorschau, noch nicht veröffentlicht. Das Bewerbungsformular versendet erst nach dem Livegang.</div>#' "$f"
+          done < <(find _vorschau -name "*.html")
+          touch _vorschau/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _vorschau
+
+  veroeffentlichen:
+    needs: bauen
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

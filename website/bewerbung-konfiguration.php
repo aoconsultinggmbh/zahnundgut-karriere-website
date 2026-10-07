@@ -1,0 +1,15 @@
+<?php
+// generiert von scripts/bauen.py – Empfänger je Stelle. Nicht von Hand ändern.
+return [
+  '_absender' => "jobs@karriere-zahnundgut.de",
+  '_absender_name' => "ZAHN & GUT Karriere",
+  '_firma' => "ZAHN & GUT",
+  '_antwortzeit' => "Wir melden uns in kurzer Zeit bei Dir.",
+  '_max_dateien' => 3,
+  '_max_mb' => 10,
+  '_loeschfrist_monate' => 6,
+  "ausbildung-zfa-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "Ausbildung als ZFA / Zahnmedizinische Fachangestellte (m/w/d) 2026", 'standort' => "Meerbusch"],
+  "zfa-behandlungsassistenz-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZFA / Zahnmedizinische Fachangestellte / Zahnarzthelferin als Behandlungsassistenz (m/w/d)", 'standort' => "Meerbusch"],
+  "zmp-zmf-dh-prophylaxe-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZMP / ZMF / DH / Zahnmedizinische Prophylaxeassistentin / Dentalhygienikerin (m/w/d)", 'standort' => "Meerbusch"],
+  "zmv-praxismanagerin-meerbusch" => ['empfaenger' => ["dr.k.becker@zahnundgut.de"], 'titel' => "ZMV / Praxismanagerin (m/w/d): Zahnmedizinische Verwaltungsangestellte für Praxisorganisation und Abrechnung", 'standort' => "Meerbusch"],
+];

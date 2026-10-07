@@ -1,0 +1,109 @@
+{
+  "standort": "meerbusch",
+  "befristung": null,
+  "gehalt": {
+    "_hinweis": "Nur nach Freigabe der Praxis eintragen.",
+    "min": null,
+    "max": null,
+    "waehrung": "EUR",
+    "einheit": "MONTH"
+  },
+  "erfahrung_monate": null,
+  "bewerbungen_an": [],
+  "ansprechpartner": null,
+  "veroeffentlicht": "2026-10-07",
+  "gueltig_bis": "2026-11-21",
+  "_datum_hinweis": "veroeffentlicht und gueltig_bis setzt scripts/stellen-aktualisieren.py monatlich neu. Von Hand nur beim Anlegen eintragen.",
+  "arbeitszeit": null,
+  "einleitung": "Wir sind ZAHN & GUT, eine moderne Gemeinschaftspraxis in Meerbusch. Bei uns stehen Teamgeist, Qualität und Menschlichkeit im Mittelpunkt. Wir bieten ein breites Behandlungsspektrum, von Zahnmedizin für Kinder bis Sofort-Implantologie, und schaffen eine Arbeitsatmosphäre, in der sich sowohl unsere Patienten als auch unser Team wohlfühlen.",
+  "status": "initiativ",
+  "kennung": "zmp-zmf-dh-prophylaxe-meerbusch",
+  "_hinweis": "Texte 1:1 von der alten Karriereseite (Stand 07.10.2026). Dort als 'initiativ' geführt.",
+  "alte_adresse": "/job/zmp-zmf-dh-zahnmedizinische-prophylaxeassistentin-dentalhygienikerin-m-w-d/",
+  "titel": "ZMP / ZMF / DH / Zahnmedizinische Prophylaxeassistentin / Dentalhygienikerin (m/w/d)",
+  "seo_titel": "ZMP / ZMF / DH Prophylaxe Meerbusch | ZAHN & GUT",
+  "titel_kurz": "ZMP, ZMF oder DH für die Prophylaxe",
+  "reihenfolge": 3,
+  "beschaeftigungsart": [
+    "VOLLZEIT",
+    "TEILZEIT"
+  ],
+  "beginn": "nach Vereinbarung",
+  "kurz": "Prophylaxe mit Herz und Know-how: professionelle Zahnreinigung, Beratung und individuelle Prophylaxe-Pläne im engen Zusammenspiel mit unserem Prophylaxe-Team.",
+  "aufgaben": [
+    "Durchführung von professionellen Zahnreinigungen",
+    "Anleitung der Patienten zu optimaler Mundhygiene und Prophylaxe-Maßnahmen",
+    "Unterstützung bei der Diagnostik und Dokumentation von Prophylaxe-Maßnahmen",
+    "Beratung der Patienten hinsichtlich individueller Prophylaxe-Pläne",
+    "Enge Zusammenarbeit mit dem Prophylaxe-Team und anderen Fachbereichen"
+  ],
+  "profil": [
+    "Abgeschlossene Berufsausbildung als zahnmedizinische Fachangestellte, Zahnarzthelferin / ZFA und eine Weiterbildung zur zahnmedizinischen Prophylaxeassistentin, ZMP, Fachassistentin ZMF oder ein Abschluss zur Dentalhygienikerin DH (m/w/d)",
+    "Röntgenschein",
+    "Grundkenntnisse mit Computern sind von Vorteil",
+    "Kenntnisse über Hygiene- und Sicherheitsstandards in einer Praxis"
+  ],
+  "qualifikation_erforderlich": "Abgeschlossene Ausbildung als ZFA mit Weiterbildung zur ZMP oder ZMF oder Abschluss als Dentalhygienikerin (m/w/d)",
+  "wir_bieten": [
+    "Attraktive Bezahlung",
+    "Wertgutscheine oder Einkaufsgutscheine",
+    "Weihnachtsgeld",
+    "Jahresbonus",
+    "Team Frühstück",
+    "Regelmäßige Teambesprechungen",
+    "Mitarbeiterevents",
+    "Jobticket",
+    "Fahrtkostenzuschüsse",
+    "Betriebliche Altersvorsorge",
+    "Selbstverständlich: Wasser, Süßgetränke, Kaffee, Obst, Süßigkeiten",
+    "Einarbeitungsplan",
+    "Weiterbildungsmöglichkeiten",
+    "Karrieremöglichkeiten",
+    "Wiedereinsteiger und Berufseinsteiger sind willkommen",
+    "Teilzeit Möglichkeiten",
+    "4-Tage-Woche",
+    "Bei uns kannst Du mittwochs und freitags bereits um 13 Uhr in den Feierabend gehen",
+    "Gute Parksituation",
+    "Gute Verkehrsanbindung",
+    "Klimatisierter Arbeitsbereich",
+    "Kein Notdienst, kein Wochenenddienst"
+  ],
+  "formular_zusatzfragen": [
+    {
+      "name": "erfahrung",
+      "frage": "Wie viele Jahre Berufserfahrung hast Du?",
+      "typ": "auswahl",
+      "optionen": [
+        "Keine Erfahrung",
+        "1 bis 3 Jahre",
+        "3 bis 5 Jahre",
+        "Mehr als 5 Jahre"
+      ],
+      "pflicht": false
+    },
+    {
+      "name": "umfang",
+      "frage": "Vollzeit oder Teilzeit?",
+      "typ": "auswahl",
+      "optionen": [
+        "Vollzeit",
+        "Teilzeit",
+        "Bin noch offen"
+      ],
+      "pflicht": false
+    },
+    {
+      "name": "verfuegbar",
+      "frage": "Wann kannst Du starten?",
+      "typ": "auswahl",
+      "optionen": [
+        "Ab sofort",
+        "In weniger als 3 Monaten",
+        "In mehr als 3 Monaten"
+      ],
+      "pflicht": false
+    }
+  ],
+  "bild": "assets/img/stelle-zmp.jpg",
+  "bild_alt": "Zwei Kolleginnen üben das Zähneputzen an einem großen Zahnmodell"
+}

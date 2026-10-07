@@ -1,0 +1,228 @@
+/* ============================================================================
+   EINWILLIGUNGSBANNER (Cookie-Banner)
+   Wiederverwendbar für alle Websites von AO Consulting.
+   Zwei Dateien einbinden, sonst nichts:
+     <link rel="stylesheet" href="assets/einwilligung.css">
+     <script src="assets/einwilligung.js" defer></script>
+   Die Oberfläche baut das Skript selbst, das HTML bleibt unberührt.
+
+   Farben kommen aus der Seite, falls --navy und --coral definiert sind.
+   Sonst greifen die Ersatzwerte hier.
+   ============================================================================ */
+
+:root{
+  --ein-navy: var(--navy, #243D6F);
+  --ein-navy-tief: var(--navy-deep, #1A2C4F);
+  --ein-navy-tinte: var(--navy-ink, #132038);
+  --ein-coral: var(--coral, #FD6E5D);
+  --ein-coral-dunkel: var(--coral-dark, #E85947);
+  --ein-text: #3D4759;
+  --ein-grau: #6E7A8C;
+  --ein-linie: rgba(36,61,111,.14);
+  --ein-hell: #F4F7FB;
+  --ein-radius: 14px;
+}
+
+/* ---------- Abdunklung ---------- */
+.ein-hinter{
+  position:fixed;inset:0;z-index:2147483100;
+  background:rgba(19,32,56,.58);
+  backdrop-filter:blur(3px);
+  display:flex;align-items:flex-end;justify-content:center;
+  padding:24px;
+  /* Geschlossen ist die Abdunklung unsichtbar UND klickdurchlässig,
+     sonst blockiert sie die ganze Seite. */
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .28s ease,visibility .28s ease;
+}
+.ein-hinter[data-offen="true"]{opacity:1;visibility:visible;pointer-events:auto}
+/* Beim Feinjustieren steht die Karte mittig, sie ist dann höher */
+.ein-hinter[data-sicht="details"]{align-items:center}
+
+/* ---------- Karte ---------- */
+.ein-karte{
+  width:min(100%, 640px);max-height:calc(100vh - 48px);
+  background:#fff;color:var(--ein-text);
+  border-radius:var(--ein-radius);
+  box-shadow:0 30px 80px -30px rgba(19,32,56,.7);
+  display:flex;flex-direction:column;overflow:hidden;
+  font-family:inherit;font-size:15px;line-height:1.6;
+  transform:translateY(22px);transition:transform .28s cubic-bezier(.4,0,.2,1);
+}
+.ein-hinter[data-offen="true"] .ein-karte{transform:translateY(0)}
+.ein-hinter[data-sicht="details"] .ein-karte{width:min(100%, 720px)}
+
+/* Schmaler Farbstreifen oben in der CI */
+.ein-karte::before{
+  content:"";display:block;height:4px;flex:none;
+  background:linear-gradient(90deg,var(--ein-coral) 0%,var(--ein-navy) 100%);
+}
+
+.ein-koerper{padding:30px 32px 4px;overflow-y:auto;flex:1 1 auto;-webkit-overflow-scrolling:touch}
+
+.ein-kicker{
+  font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ein-coral);display:block;margin-bottom:10px;
+}
+.ein-karte h2{
+  margin:0 0 12px;font-size:1.42rem;font-weight:800;color:var(--ein-navy);
+  letter-spacing:-.02em;line-height:1.2;
+}
+.ein-karte p{margin:0 0 14px}
+.ein-karte a{color:var(--ein-navy);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.ein-karte a:hover{color:var(--ein-coral)}
+.ein-fein{font-size:.83rem;color:var(--ein-grau);line-height:1.55}
+
+/* ---------- Knopfleiste ---------- */
+.ein-fuss{
+  padding:22px 32px 26px;background:var(--ein-hell);
+  border-top:1px solid var(--ein-linie);flex:none;
+}
+.ein-knoepfe{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ein-knopf{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 22px;border-radius:7px;border:1.5px solid transparent;
+  font:inherit;font-weight:700;font-size:.95rem;line-height:1.2;text-align:center;
+  cursor:pointer;text-decoration:none;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+}
+.ein-knopf:hover{transform:translateY(-2px)}
+.ein-knopf:focus-visible{outline:3px solid var(--ein-navy);outline-offset:3px}
+.ein-knopf svg{width:17px;height:17px;flex:none}
+
+/* Empfehlung: gefüllt in Coral, mit Haken und Rahmenring.
+   Ablehnen steht daneben, gleich groß und gleich gut erreichbar. */
+.ein-knopf--alle{
+  background:var(--ein-coral);color:#fff;
+  box-shadow:0 12px 26px -14px rgba(253,110,93,.95), 0 0 0 4px rgba(253,110,93,.16);
+}
+.ein-knopf--alle:hover{background:var(--ein-coral-dunkel)}
+.ein-knopf--alle:focus-visible{outline-color:var(--ein-coral)}
+.ein-knopf--notwendig{background:#fff;border-color:var(--ein-navy);color:var(--ein-navy)}
+.ein-knopf--notwendig:hover{background:var(--ein-navy);color:#fff}
+.ein-knopf--speichern{background:var(--ein-navy);color:#fff}
+.ein-knopf--speichern:hover{background:var(--ein-navy-tief)}
+
+.ein-empfehlung{
+  display:block;text-align:center;font-size:.72rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ein-coral);
+  margin-bottom:7px;
+}
+
+.ein-nebenlinks{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:8px 20px;margin-top:16px;font-size:.82rem;
+}
+.ein-nebenlinks a,.ein-nebenlinks button{
+  background:none;border:0;padding:0;font:inherit;font-size:.82rem;
+  color:var(--ein-grau);text-decoration:underline;text-underline-offset:2px;
+  cursor:pointer;font-weight:600;
+}
+.ein-nebenlinks a:hover,.ein-nebenlinks button:hover{color:var(--ein-navy)}
+.ein-nebenlinks a:focus-visible,.ein-nebenlinks button:focus-visible{
+  outline:2px solid var(--ein-navy);outline-offset:3px;border-radius:2px;
+}
+
+/* ---------- Kategorien ---------- */
+.ein-liste{display:grid;gap:11px;margin:22px 0 4px}
+.ein-gruppe{border:1.5px solid var(--ein-linie);border-radius:10px;overflow:hidden}
+.ein-gruppe__kopf{
+  display:flex;align-items:flex-start;gap:14px;padding:15px 17px;
+}
+.ein-gruppe__text{flex:1 1 auto;min-width:0}
+.ein-gruppe__name{
+  display:block;font-size:.97rem;font-weight:800;color:var(--ein-navy);
+  letter-spacing:-.01em;margin-bottom:3px;
+}
+.ein-gruppe__kurz{display:block;font-size:.85rem;color:var(--ein-grau);line-height:1.5}
+
+/* Schalter */
+.ein-schalter{
+  flex:none;width:50px;height:28px;border-radius:100px;border:0;cursor:pointer;
+  background:#C7D0DE;position:relative;transition:background .2s ease;padding:0;
+}
+.ein-schalter::after{
+  content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;
+  border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(19,32,56,.28);
+  transition:transform .2s cubic-bezier(.4,0,.2,1);
+}
+.ein-schalter[aria-checked="true"]{background:var(--ein-coral)}
+.ein-schalter[aria-checked="true"]::after{transform:translateX(22px)}
+.ein-schalter:focus-visible{outline:3px solid var(--ein-navy);outline-offset:3px}
+/* Pflichtkategorie: klar sichtbar an, aber nicht umschaltbar.
+   Navy statt Coral, damit "gesperrt" und "vom Nutzer erlaubt" unterscheidbar sind. */
+.ein-schalter[disabled]{background:var(--ein-navy);opacity:1;cursor:default}
+.ein-schalter[disabled]::after{transform:translateX(22px)}
+.ein-immer{
+  display:inline-block;margin-top:6px;padding:3px 9px;border-radius:100px;
+  background:rgba(36,61,111,.09);color:var(--ein-navy);
+  font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+}
+
+/* Aufklappbare Dienstliste */
+.ein-mehr{
+  display:block;width:100%;text-align:left;background:var(--ein-hell);border:0;
+  border-top:1px solid var(--ein-linie);padding:11px 17px;
+  font:inherit;font-size:.8rem;font-weight:700;color:var(--ein-navy);cursor:pointer;
+}
+.ein-mehr:hover{background:#EAF0F8}
+.ein-mehr:focus-visible{outline:3px solid var(--ein-navy);outline-offset:-3px}
+.ein-mehr::after{content:" ▾";color:var(--ein-coral)}
+.ein-mehr[aria-expanded="true"]::after{content:" ▴"}
+.ein-dienste{padding:4px 17px 15px;background:var(--ein-hell);border-top:1px solid var(--ein-linie)}
+.ein-dienst{padding:12px 0;border-bottom:1px solid var(--ein-linie)}
+.ein-dienst:last-child{border-bottom:0;padding-bottom:2px}
+.ein-dienst__name{font-weight:800;color:var(--ein-navy);font-size:.88rem;display:block;margin-bottom:6px}
+.ein-dienst dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.79rem}
+.ein-dienst dt{color:var(--ein-grau);font-weight:700}
+.ein-dienst dd{margin:0;color:var(--ein-text)}
+
+/* ---------- Bestätigung nach dem Speichern ---------- */
+.ein-notiz{
+  display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:12px 15px;
+  background:var(--ein-hell);border-left:3px solid var(--ein-coral);border-radius:6px;
+  font-size:.85rem;color:var(--ein-text);
+}
+.ein-notiz svg{width:18px;height:18px;color:var(--ein-coral);flex:none}
+
+/* ---------- Späterer Zugang über die Fußzeile ---------- */
+.ein-ausloeser{
+  background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;
+  cursor:pointer;text-decoration:none;text-align:left;
+  transition:color .2s ease;
+}
+.ein-ausloeser:focus-visible{outline:2px solid var(--ein-coral);outline-offset:3px;border-radius:2px}
+.ein-ausloeser:hover{color:var(--ein-coral)}
+
+/* Solange das Banner offen ist, rutscht der Barrierefreiheits-Knopf nach oben,
+   damit er nicht darunter verschwindet. */
+html.ein-offen .bf-knopf{transform:translateY(-96px)}
+
+/* Platzhalter für blockierte Einbettungen (Karte, Video) */
+.ein-sperre{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:13px;text-align:center;padding:32px 24px;height:100%;
+  background:repeating-linear-gradient(45deg,rgba(36,61,111,.045) 0 2px,transparent 2px 11px),var(--ein-hell);
+}
+.ein-sperre svg{width:38px;height:38px;color:var(--ein-coral)}
+.ein-sperre__titel{font-weight:800;color:var(--ein-navy);font-size:1.02rem;margin:0}
+.ein-sperre__text{font-size:.82rem;color:var(--ein-grau);max-width:46ch;margin:0;line-height:1.5}
+
+@media (max-width:600px){
+  .ein-hinter{padding:0;align-items:flex-end}
+  .ein-karte{
+    width:100%;max-height:92vh;
+    border-radius:var(--ein-radius) var(--ein-radius) 0 0;
+  }
+  .ein-koerper{padding:24px 22px 4px}
+  .ein-fuss{padding:18px 22px 22px}
+  .ein-knoepfe{grid-template-columns:1fr}
+  .ein-karte h2{font-size:1.24rem}
+  html.ein-offen .bf-knopf{transform:none;opacity:0;pointer-events:none}
+}
+
+/* Wer im Betriebssystem weniger Bewegung wünscht, bekommt sie auch hier nicht */
+@media (prefers-reduced-motion:reduce){
+  .ein-hinter,.ein-karte,.ein-knopf,.ein-schalter,.ein-schalter::after{transition:none}
+  .ein-knopf:hover{transform:none}
+}

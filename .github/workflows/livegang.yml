@@ -1,0 +1,52 @@
+# Livegang: lädt website/ per FTPS zu All-Inkl, sobald der Zweig live auf einen neuen Stand gesetzt wird.
+# live wird nur auf das ausdrückliche Wort „live" des Mitarbeiters gesetzt – mit einer Ausnahme:
+# der monatliche Ablauf stellen-aktualisieren.yml schreibt Datumsangaben direkt auf live (siehe dort).
+name: Livegang
+
+on:
+  push:
+    branches: [live]
+    paths: ["website/**", "stellen/**", "kunde.json", "vorlagen/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: livegang
+  cancel-in-progress: false
+
+jobs:
+  hochladen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stellen bauen und prüfen (rot = kein Upload)
+        run: |
+          python3 scripts/bauen.py
+          python3 scripts/pruefen.py
+
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Per FTPS hochladen
+        env:
+          SERVER: ${{ secrets.FTP_SERVER }}
+          BENUTZER: ${{ secrets.FTP_BENUTZER }}
+          PASSWORT: ${{ secrets.FTP_PASSWORT }}
+          ORDNER: ${{ secrets.FTP_ORDNER }}
+        run: |
+          lftp <<LFTP
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate true
+          set ftp:passive-mode true
+          set ftp:prefer-epsv false
+          set net:max-retries 3
+          set net:timeout 25
+          set net:reconnect-interval-base 5
+          set xfer:clobber on
+          set cmd:fail-exit true
+          open "$SERVER"
+          user "$BENUTZER" "$PASSWORT"
+          mirror --reverse --delete --verbose=1 --parallel=2 --exclude-glob .DS_Store --exclude-glob LIESMICH.md --exclude-glob _alte-dateinamen/ ./website/ "${ORDNER:-./}"
+          bye
+          LFTP

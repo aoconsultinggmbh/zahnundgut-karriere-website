@@ -1,0 +1,53 @@
+{
+  "stand": "2026-10-07",
+  "stellen": [
+    {
+      "kennung": "ausbildung-zfa-meerbusch",
+      "titel": "Ausbildung als ZFA / Zahnmedizinische Fachangestellte (m/w/d) 2026",
+      "status": "aktiv",
+      "ort": "Meerbusch",
+      "url": "https://karriere-zahnundgut.de/stellen/ausbildung-zfa-meerbusch.html",
+      "veroeffentlicht": "2026-10-07",
+      "gueltig_bis": "2026-11-21",
+      "empfaenger": [
+        "dr.k.becker@zahnundgut.de"
+      ]
+    },
+    {
+      "kennung": "zfa-behandlungsassistenz-meerbusch",
+      "titel": "ZFA / Zahnmedizinische Fachangestellte / Zahnarzthelferin als Behandlungsassistenz (m/w/d)",
+      "status": "aktiv",
+      "ort": "Meerbusch",
+      "url": "https://karriere-zahnundgut.de/stellen/zfa-behandlungsassistenz-meerbusch.html",
+      "veroeffentlicht": "2026-10-07",
+      "gueltig_bis": "2026-11-21",
+      "empfaenger": [
+        "dr.k.becker@zahnundgut.de"
+      ]
+    },
+    {
+      "kennung": "zmp-zmf-dh-prophylaxe-meerbusch",
+      "titel": "ZMP / ZMF / DH / Zahnmedizinische Prophylaxeassistentin / Dentalhygienikerin (m/w/d)",
+      "status": "initiativ",
+      "ort": "Meerbusch",
+      "url": "https://karriere-zahnundgut.de/stellen/zmp-zmf-dh-prophylaxe-meerbusch.html",
+      "veroeffentlicht": "2026-10-07",
+      "gueltig_bis": "2026-11-21",
+      "empfaenger": [
+        "dr.k.becker@zahnundgut.de"
+      ]
+    },
+    {
+      "kennung": "zmv-praxismanagerin-meerbusch",
+      "titel": "ZMV / Praxismanagerin (m/w/d): Zahnmedizinische Verwaltungsangestellte für Praxisorganisation und Abrechnung",
+      "status": "initiativ",
+      "ort": "Meerbusch",
+      "url": "https://karriere-zahnundgut.de/stellen/zmv-praxismanagerin-meerbusch.html",
+      "veroeffentlicht": "2026-10-07",
+      "gueltig_bis": "2026-11-21",
+      "empfaenger": [
+        "dr.k.becker@zahnundgut.de"
+      ]
+    }
+  ]
+}

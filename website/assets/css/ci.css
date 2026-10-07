@@ -1,0 +1,9 @@
+/* generiert von scripts/bauen.py aus kunde.json → ci. Nicht von Hand ändern. */
+:root{
+  --primaer: #5a7a14;
+  --akzent: #95c11f;
+  --hintergrund: #ffffff;
+  --text: #333333;
+  --schrift-ueberschrift: "Open Sans", system-ui, sans-serif;
+  --schrift-text: "Open Sans", system-ui, sans-serif;
+}

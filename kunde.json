@@ -1,0 +1,122 @@
+{
+  "_hinweis": "Stammdaten des Kunden. Alles, was hier steht, landet auf der Seite und in den Google-Daten. Nichts erfinden – lieber leer lassen und nachfragen. Quellen: alte Karriereseite karriere-zahnundgut.de (WordPress/Divi, ausgelesen 07.10.2026), Hauptseite zahnundgut.de (Kontakt, Sprechzeiten, Schriften, Farben), Vorgaben Awan Tofik im Chat. Offene Punkte: doku/entscheidungen.md.",
+  "kennung": "zahnundgut",
+  "firma": "ZAHN & GUT",
+  "firma_lang": "Zahnarztpraxis ZAHN & GUT, Dr. Katrin Becker, Dr. Janette Müller, Dr. Oliver Becker, Meerbusch",
+  "branche": "Zahnarztpraxis",
+  "kurzbeschreibung": "Moderne Gemeinschaftspraxis in Meerbusch-Büderich: Zahnmedizin von Kinderzahnmedizin bis Sofort-Implantologie.",
+  "hauptseite": "https://zahnundgut.de",
+  "domain": "karriere-zahnundgut.de",
+  "vorschau_domain": "zahnundgut-karriere.vorschau.ao-consult.de",
+  "vorschau": true,
+  "standorte": [
+    {
+      "kennung": "meerbusch",
+      "name": "Zahnarztpraxis ZAHN & GUT",
+      "strasse": "Düsseldorfer Straße 81",
+      "plz": "40667",
+      "ort": "Meerbusch",
+      "region": "Nordrhein-Westfalen",
+      "land": "DE",
+      "telefon": "+49 2132 9988426",
+      "email": "dr.k.becker@zahnundgut.de",
+      "google_maps": ""
+    }
+  ],
+  "ansprechpartner": {
+    "_hinweis": "Kein Foto: Welches Bild Dr. Becker zeigt, ist nicht bestätigt. Erst nach Bestätigung 'foto' eintragen.",
+    "titel": "Deine Ansprechpartnerin",
+    "name": "Dr. Katrin Becker",
+    "rolle": "Zahnärztin",
+    "telefon": "02132 99 88 426",
+    "email": "dr.k.becker@zahnundgut.de",
+    "foto": ""
+  },
+  "bewerbungen": {
+    "_hinweis": "Empfänger laut Awan 07.10.2026: dr.k.becker@zahnundgut.de (wie auf der alten Karriereseite). Absender muss vor dem Livegang als Postfach auf der Karriere-Domain existieren.",
+    "standard_empfaenger": [
+      "dr.k.becker@zahnundgut.de"
+    ],
+    "absender": "jobs@karriere-zahnundgut.de",
+    "absender_name": "ZAHN & GUT Karriere",
+    "antwortzeit": "Wir melden uns in kurzer Zeit bei Dir.",
+    "unterlagen_optional": true,
+    "max_dateien": 3,
+    "max_mb_je_datei": 10,
+    "loeschfrist_monate": 6
+  },
+  "ci": {
+    "farbe_primaer": "#5a7a14",
+    "farbe_akzent": "#95c11f",
+    "farbe_hintergrund": "#ffffff",
+    "farbe_text": "#333333",
+    "schrift_ueberschrift": "Open Sans",
+    "schrift_text": "Open Sans",
+    "logo": "assets/img/logo.svg",
+    "logo_hell": "assets/img/logo-weiss.svg",
+    "quelle": "CI von der alten Karriereseite und zahnundgut.de (ausgelesen 07.10.2026): Schrift Open Sans (Text) und Open Sans Condensed (Überschriften, Menü), jetzt als eine variable Schriftdatei lokal (font-stretch 75 % = Condensed). Logo-Grün #95c11f, Knopf-Grün #97bf0d, dunkleres Grün der Hauptseite #6b9329, Text #555555. Für Schrift auf Weiß reicht das Logo-Grün nicht (Kontrast 2,2:1), deshalb Text-Grün #5a7a14 (5,1:1). Logo als SVG aus dem weißen Logo der alten Seite nachgefärbt (Schrift #706f6f, Grün #95c11f wie im PNG)."
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/zahnarztpraxis_zahnundgut",
+    "facebook": "https://www.facebook.com/zahnundgut",
+    "linkedin": "",
+    "youtube": "",
+    "tiktok": "",
+    "kununu": "",
+    "jameda": ""
+  },
+  "seo": {
+    "berufe_kurz": "ZFA, ZMP, ZMF, DH, ZMV & Azubi",
+    "regionen": [
+      "Meerbusch",
+      "Meerbusch-Büderich",
+      "Düsseldorf",
+      "Neuss"
+    ],
+    "og_bild": "assets/img/og-bild.jpg"
+  },
+  "google_for_jobs": {
+    "gueltigkeit_tage": 45,
+    "datum_monatlich_erneuern": true,
+    "indeed_feed": true
+  },
+  "statistik": {
+    "matomo_url": "https://statistik.ao-consult.de/",
+    "matomo_id": ""
+  },
+  "rechtliches": {
+    "inhaber": "Dr. Katrin Becker, Dr. Janette Müller, Dr. Oliver Becker",
+    "rechtsform": "",
+    "umsatzsteuer_id": "",
+    "kammer": "Zahnärztekammer Nordrhein, Emanuel-Leutze-Straße 8, 40547 Düsseldorf",
+    "kzv": "Kassenzahnärztliche Vereinigung Nordrhein, Lindemannstraße 34-42, 40237 Düsseldorf",
+    "berufsbezeichnung": "Zahnärztin / Zahnarzt (verliehen in Deutschland)",
+    "fax": "02132 99 88 427",
+    "email_praxis": "hallo@zahnundgut.de",
+    "hoster": "ALL-INKL.COM, Neue Medien Münnich, Hauptstraße 68, 02742 Friedersdorf"
+  },
+  "benefits_standard": [
+    "Attraktive Bezahlung",
+    "Wertgutscheine oder Einkaufsgutscheine",
+    "Weihnachtsgeld",
+    "Jahresbonus",
+    "Team Frühstück",
+    "Regelmäßige Teambesprechungen",
+    "Mitarbeiterevents",
+    "Jobticket",
+    "Fahrtkostenzuschüsse",
+    "Betriebliche Altersvorsorge",
+    "Selbstverständlich: Wasser, Süßgetränke, Kaffee, Obst, Süßigkeiten",
+    "Einarbeitungsplan",
+    "Weiterbildungsmöglichkeiten",
+    "Karrieremöglichkeiten",
+    "Wiedereinsteiger und Berufseinsteiger sind willkommen",
+    "Teilzeit Möglichkeiten",
+    "4-Tage-Woche",
+    "Bei uns kannst Du mittwochs und freitags bereits um 13 Uhr in den Feierabend gehen",
+    "Gute Parksituation",
+    "Gute Verkehrsanbindung",
+    "Klimatisierter Arbeitsbereich",
+    "Kein Notdienst, kein Wochenenddienst"
+  ]
+}

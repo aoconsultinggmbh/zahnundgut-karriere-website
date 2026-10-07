@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{seitentitel}}</title>
+<meta name="description" content="{{meta_beschreibung}}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Karriere bei {{firma}}">
+<meta property="og:title" content="{{seitentitel}}">
+<meta property="og:description" content="{{meta_beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="{{og_bild}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2b2f27">
+<link rel="icon" href="../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/open-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/einwilligung.css">
+<link rel="stylesheet" href="../assets/css/barrierefreiheit.css">
+<link rel="stylesheet" href="../assets/css/stil.css">
+<link rel="stylesheet" href="../assets/css/karriere.css">
+<script type="application/ld+json">
+{{{jsonld}}}
+</script>
+<script type="application/ld+json">
+{{{jsonld_breadcrumb}}}
+</script>
+</head>
+<body class="stellenseite">
+<!-- generiert von scripts/bauen.py aus stellen/{{kennung}}.json. Nicht von Hand ändern, Änderungen in der JSON-Datei machen. -->
+
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+{{{kopf_html}}}
+
+<main id="inhalt">
+  <nav class="wrap brotkrumen" aria-label="Brotkrümelnavigation">
+    <a href="../index.html">Karriere</a> <span aria-hidden="true">/</span> <a href="../index.html#stellen">Stellenangebote</a> <span aria-hidden="true">/</span> <span aria-current="page">{{titel_kurz}}</span>
+  </nav>
+
+  <section class="seitenkopf{{seitenkopf_klasse}} stelle-kopf">
+    {{{kopf_bild}}}
+    <div class="wrap seitenkopf-text">
+      <p class="marken">{{{marken_html}}}<span class="marke marke-grau">{{standort_ort}}</span><span class="marke marke-grau">{{beschaeftigungsart_text}}</span></p>
+      <h1>{{titel}}</h1>
+      <p class="lead">{{kurz}}</p>
+      <div class="knoepfe">
+        <a class="knopf" href="#bewerben">Jetzt bewerben</a>
+        {{{whatsapp_knopf_hell}}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Zweispaltig: links Text und Formular, rechts klebend Ansprechpartnerin und Eckdaten.
+       Auf dem Handy stehen Ansprechpartnerin und Eckdaten zuerst, damit der Kontakt oben bleibt. -->
+  <div class="wrap abschnitt stelle-raster">
+    <div class="stelle-text">
+      <div class="text-block">
+        <p class="dachzeile">Willkommen bei {{firma}}</p>
+        <h2>Das macht uns aus.</h2>
+        {{{einleitung_html}}}
+      </div>
+
+      <div class="text-block">
+        <h2>Dein Aufgabenbereich</h2>
+        <ul class="haken-liste">{{{aufgaben_html}}}</ul>
+      </div>
+
+      <div class="text-block">
+        <h2>Dein Profil</h2>
+        <ul class="haken-liste">{{{profil_html}}}</ul>
+      </div>
+
+      <div class="text-block">
+        <h2>Freu Dich auf</h2>
+        <ul class="haken-liste benefits-liste">{{{wir_bieten_html}}}</ul>
+      </div>
+
+      <div id="bewerben" class="bewerben">
+        <p class="dachzeile">Bewerbung</p>
+        <h2>Jetzt bewerben: {{titel_kurz}}</h2>
+        <p>Unterlagen parat? Dann häng sie gerne an. Falls nicht, kannst Du auch ohne Unterlagen Kontakt aufnehmen. {{antwortzeit}}</p>
+
+        <form class="formular bewerbungsformular" action="../bewerbung-senden.php" method="post" enctype="multipart/form-data" novalidate data-max-mb="{{max_mb}}" data-max-dateien="{{max_dateien}}">
+          <input type="hidden" name="stelle" value="{{kennung}}">
+          <input type="hidden" name="zeit" value="">
+          <div class="honigtopf" aria-hidden="true">
+            <label>Webseite <input type="text" name="webseite" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="feld">
+            <label for="name">Vor- und Nachname *</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="feld-reihe">
+            <div class="feld">
+              <label for="email">E-Mail *</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="feld">
+              <label for="telefon">Telefon *</label>
+              <input id="telefon" name="telefon" type="tel" required autocomplete="tel">
+            </div>
+          </div>
+
+          {{{zusatzfragen_html}}}
+
+          <div class="feld">
+            <label for="nachricht">Fragen, Anregungen oder ein paar Worte zu Dir (optional)</label>
+            <textarea id="nachricht" name="nachricht" rows="5" placeholder="Wie bist Du auf uns aufmerksam geworden? Was macht Dich aus?"></textarea>
+          </div>
+
+          <div class="feld">
+            <label for="unterlagen">Lebenslauf und Unterlagen (PDF, optional, bis zu {{max_dateien}} Dateien, je höchstens {{max_mb}} MB)</label>
+            <input id="unterlagen" name="unterlagen[]" type="file" accept="application/pdf,.pdf" multiple>
+          </div>
+
+          <div class="feld feld-zustimmung">
+            <label>
+              <input type="checkbox" name="datenschutz" value="ja" required>
+              <span>Ich habe die <a href="../rechtliches/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben für dieses Bewerbungsverfahren verarbeitet werden. *</span>
+            </label>
+          </div>
+
+          <p class="formular-meldung" role="status" aria-live="polite"></p>
+          <button class="knopf" type="submit">Bewerbung absenden</button>
+          <p class="klein">Oder direkt per E-Mail an <a href="mailto:{{empfaenger_anzeige}}?subject={{mail_betreff}}">{{empfaenger_anzeige}}</a></p>
+        </form>
+      </div>
+    </div>
+
+    <aside class="stelle-seite" aria-label="Ansprechpartnerin und Eckdaten">
+      {{{ansprechpartner_block}}}
+      <dl class="fakten">
+        <div><dt>Arbeitszeit</dt><dd>{{beschaeftigungsart_text}}{{arbeitszeit_zusatz}}</dd></div>
+        <div><dt>Beginn</dt><dd>{{beginn}}</dd></div>
+        {{{gehalt_fakt}}}
+        <div><dt>Arbeitgeber</dt><dd>{{branche}}</dd></div>
+        <div><dt>Arbeitsort</dt><dd><address>{{standort_name}}<br>{{standort_strasse}}<br>{{standort_plz}} {{standort_ort}}{{{standort_region_html}}}</address>
+          <a class="mehr" href="https://www.google.com/maps/dir/?api=1&amp;destination={{standort_strasse}}%2C%20{{standort_plz}}%20{{standort_ort}}" rel="noopener" target="_blank">Route planen</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="band band-dunkel">
+    <div class="wrap band-zeile">
+      <div>
+        <h2>Noch nicht das Richtige?</h2>
+        <p>Schau Dir unsere anderen Stellen an oder bewirb Dich initiativ.</p>
+      </div>
+      <div class="knoepfe"><a class="knopf knopf-hell" href="../index.html#stellen">Alle Stellen</a></div>
+    </div>
+  </section>
+</main>
+
+{{{fuss_html}}}
+{{{whatsapp_schwebend}}}
+
+<script src="../assets/js/konfiguration.js"></script>
+<script src="../assets/js/ao-konfiguration.js" defer></script>
+<script src="../assets/js/einwilligung.js" defer></script>
+<script src="../assets/js/barrierefreiheit.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/statistik.js" defer></script>
+</body>
+</html>

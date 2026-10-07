@@ -1,0 +1,77 @@
+{
+  "standort": "meerbusch",
+  "befristung": null,
+  "gehalt": {
+    "_hinweis": "Nur nach Freigabe der Praxis eintragen.",
+    "min": null,
+    "max": null,
+    "waehrung": "EUR",
+    "einheit": "MONTH"
+  },
+  "erfahrung_monate": null,
+  "bewerbungen_an": [],
+  "ansprechpartner": null,
+  "veroeffentlicht": "2026-10-07",
+  "gueltig_bis": "2026-11-21",
+  "_datum_hinweis": "veroeffentlicht und gueltig_bis setzt scripts/stellen-aktualisieren.py monatlich neu. Von Hand nur beim Anlegen eintragen.",
+  "arbeitszeit": null,
+  "einleitung": "Wir sind ZAHN & GUT, eine moderne Gemeinschaftspraxis in Meerbusch. Bei uns stehen Teamgeist, Qualität und Menschlichkeit im Mittelpunkt. Wir bieten ein breites Behandlungsspektrum, von Zahnmedizin für Kinder bis Sofort-Implantologie, und schaffen eine Arbeitsatmosphäre, in der sich sowohl unsere Patienten als auch unser Team wohlfühlen.",
+  "status": "aktiv",
+  "kennung": "ausbildung-zfa-meerbusch",
+  "_hinweis": "Texte 1:1 von der alten Karriereseite (Stand 07.10.2026). Dort als 'Neu, 2026' geführt – Ausbildungsjahr mit der Praxis klären (2026 hat vermutlich schon begonnen).",
+  "alte_adresse": "/job/ausbildung-als-zfa-zahnmedizinische-fachangestellte-m-w-d-2026/",
+  "titel": "Ausbildung als ZFA / Zahnmedizinische Fachangestellte (m/w/d) 2026",
+  "seo_titel": "Ausbildung ZFA in Meerbusch (m/w/d) | ZAHN & GUT",
+  "titel_kurz": "Ausbildung als ZFA",
+  "reihenfolge": 1,
+  "beschaeftigungsart": [
+    "AUSBILDUNG"
+  ],
+  "beginn": "2026",
+  "kurz": "Starte Deine Zukunft bei ZAHN & GUT: eine abwechslungsreiche Ausbildung zur Zahnmedizinischen Fachangestellten in einem freundlichen und kollegialen Team in Meerbusch.",
+  "aufgaben": [
+    "Eine abwechslungsreiche Ausbildung in einem freundlichen und kollegialen Team",
+    "Ein breites Spektrum an Aufgaben im Bereich der Zahnmedizin, inklusive Assistenz bei Behandlungen, Durchführung von Prophylaxe-Maßnahmen und Verwaltungsaufgaben",
+    "Regelmäßige interne Schulungen und Fortbildungen",
+    "Die Möglichkeit, eigene Ideen und Vorschläge einzubringen und aktiv an der Gestaltung der Praxis mitzuwirken"
+  ],
+  "profil": [
+    "Ein guter Schulabschluss",
+    "Interesse an medizinischen Themen und Freude am Umgang mit Menschen",
+    "Eine sorgfältige Arbeitsweise und eine ausgeprägte Serviceorientierung",
+    "Gute Deutschkenntnisse in Wort und Schrift"
+  ],
+  "qualifikation_erforderlich": "Ein guter Schulabschluss",
+  "wir_bieten": [
+    "Attraktive Bezahlung",
+    "Wertgutscheine oder Einkaufsgutscheine",
+    "Weihnachtsgeld",
+    "Jahresbonus",
+    "Team Frühstück",
+    "Regelmäßige Teambesprechungen",
+    "Mitarbeiterevents",
+    "Jobticket",
+    "Fahrtkostenzuschüsse",
+    "Betriebliche Altersvorsorge",
+    "Selbstverständlich: Wasser, Süßgetränke, Kaffee, Obst, Süßigkeiten",
+    "Einarbeitungsplan",
+    "Weiterbildungsmöglichkeiten",
+    "Karrieremöglichkeiten",
+    "4-Tage-Woche",
+    "Bei uns kannst Du mittwochs und freitags bereits um 13 Uhr in den Feierabend gehen",
+    "Gute Parksituation",
+    "Gute Verkehrsanbindung",
+    "Klimatisierter Arbeitsbereich",
+    "Kein Notdienst, kein Wochenenddienst"
+  ],
+  "formular_zusatzfragen": [
+    {
+      "name": "schulabschluss",
+      "frage": "Welchen Schulabschluss hast Du oder machst Du gerade?",
+      "typ": "text",
+      "pflicht": false
+    }
+  ],
+  "bild": "assets/img/stelle-ausbildung.jpg",
+  "bild_alt": "Drei Kolleginnen zeigen lachend ein Zahnmodell"
+}

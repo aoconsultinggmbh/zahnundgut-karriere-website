@@ -1,0 +1,201 @@
+/* karriere.css Teile, die es nur auf der Karriereseite gibt, plus Feinschliff im Stil von ZAHN & GUT. Grundgestaltung in stil.css. */
+
+/* Vorschau-Hinweis (setzt der Vorschau-Ablauf ein) */
+.vorschau-hinweis{background:#fbf1d3;color:#5c4300;font-size:13px;font-weight:700;text-align:center;padding:6px 12px;position:relative;z-index:120}
+.startseite .vorschau-hinweis{position:fixed;left:0;right:0;bottom:0;z-index:95}
+
+/* Hero mit Teamfoto */
+.hero-karriere .hero-foto{position:absolute;inset:0}
+.hero-karriere .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero-karriere h1{font-size:clamp(40px,6vw,82px);max-width:20ch}
+@media (prefers-reduced-motion:no-preference){
+  .hero-karriere .hero-foto img{animation:hero-zoom 30s ease-in-out infinite alternate}
+}
+html.bf-ruhe .hero-karriere .hero-foto img{animation:none}
+
+/* Marken (Ampel: offen grün, initiativ senfgelb) */
+.marken{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.marke{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.02em;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.marke-gruen{background:#e3f5ec;color:#13744a}
+.marke-gruen:first-child::before{content:"";width:7px;height:7px;border-radius:50%;background:#1fa463}
+.marke-orange{background:#fbf1d3;color:#7a5800}
+.marke-orange::before{content:"";width:7px;height:7px;border-radius:50%;background:#d4a017}
+.marke-grau{background:var(--flaeche);color:var(--grau)}
+.seitenkopf .marke-grau{background:rgba(255,255,255,.14);color:#fff}
+
+/* Stellenliste */
+.stellen-liste{display:grid;gap:14px}
+.stelle-zeile{display:grid;grid-template-columns:1fr auto;gap:10px 28px;align-items:center;background:#fff;border:1px solid var(--linie);border-radius:var(--radius);padding:26px 30px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;isolation:isolate;transition:transform .25s,box-shadow .25s,border-color .25s}
+.stelle-zeile::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(149,193,31,.25),transparent 60%)}
+.stelle-zeile:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(43,47,39,.10);border-color:transparent}
+.stelle-zeile:hover::before{opacity:1}
+.stelle-zeile .marken{grid-column:1/-1}
+.stelle-zeile h3{font-size:clamp(19px,1.8vw,24px);margin:0 0 .25em}
+.stelle-zeile .meta{margin:0;color:var(--grau);font-size:15px}
+.stelle-zeile .pfeil{width:52px;height:52px;border-radius:50%;background:var(--blau);color:#fff;display:grid;place-items:center;transition:transform .25s,background .25s}
+.stelle-zeile .pfeil svg{width:22px;height:22px}
+.stelle-zeile:hover .pfeil{transform:translateX(4px);background:var(--nacht)}
+.zustand-initiativ{background:#fffdf6}
+@media (max-width:600px){.stelle-zeile{padding:22px 20px;gap:10px 16px}.stelle-zeile .pfeil{width:42px;height:42px}}
+.stellen-hinweis{margin-top:22px;color:var(--grau)}
+.flaeche .stelle-zeile{border-color:transparent}
+
+/* Benefits */
+.benefits-raster{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1100px){.benefits-raster{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.benefits-raster{grid-template-columns:1fr}}
+.benefit{background:#fff;border-radius:var(--radius);padding:28px 26px;position:relative;overflow:hidden;isolation:isolate;transition:transform .25s,box-shadow .25s}
+.benefit::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(149,193,31,.28),transparent 60%)}
+.benefit:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(43,47,39,.08)}
+.benefit:hover::before{opacity:1}
+.benefit img{width:44px;height:44px;margin-bottom:18px;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.benefit:hover img{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
+.benefit h3{font-size:19px;margin-bottom:.35em}
+.benefit p{color:var(--grau);font-size:15.5px;margin:0}
+.benefits-fuss{margin-top:28px;color:var(--grau);max-width:70ch}
+
+/* Drei Gründe */
+.gruende-raster{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.gruende-raster{grid-template-columns:1fr}}
+.grund{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--flaeche)}
+.grund img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .8s ease}
+.grund:hover img{transform:scale(1.04)}
+.grund-text{padding:26px 28px 30px}
+.grund-text h3{margin-bottom:.35em}
+.grund-text p{color:var(--grau);margin:0}
+
+/* Ansprechpartnerin auf der Startseite */
+.ansprech-band .text-spalte .knoepfe{margin-top:8px}
+.kontakt-zeilen{list-style:none;padding:0;margin:0 0 1.4rem}
+.kontakt-zeilen li{display:flex;align-items:center;gap:12px;margin-bottom:.5rem;font-size:18px}
+.kontakt-zeilen .ikon-klein{width:22px;height:22px;color:var(--hellblau)}
+.kontakt-zeilen a{color:#fff;text-decoration:none;font-weight:700}
+.kontakt-zeilen a:hover{color:var(--hellblau)}
+
+/* Tipps */
+.tipps-raster{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1100px){.tipps-raster{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.tipps-raster{grid-template-columns:1fr}}
+.tipps-raster .kachel img{width:44px;height:44px;margin-bottom:16px}
+.tipps-raster .kachel h3{font-size:19px}
+.tipps-raster .kachel p{font-size:15.5px;margin:0}
+
+/* FAQ mit Bild und Kontaktkarte */
+.faq-seite{display:grid;gap:20px;position:sticky;top:100px}
+@media (max-width:900px){.faq-seite{position:static}}
+.faq-seite .bild-quer img{aspect-ratio:3/2}
+
+/* Stellenseite */
+.stelle-kopf .marken{margin-bottom:18px}
+.stelle-kopf h1{max-width:22ch;font-size:clamp(32px,4.6vw,62px)}
+.stelle-kopf .knoepfe{margin-top:26px}
+.stelle-raster{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(40px,6vw,90px);align-items:start}
+.stelle-seite{position:sticky;top:100px;display:grid;gap:20px}
+@media (max-width:950px){.stelle-raster{grid-template-columns:1fr}.stelle-seite{position:static;order:-1}}
+.ansprech-karte{background:var(--nacht);color:#fff;border-radius:var(--radius);padding:28px;text-align:center}
+.ansprech-karte .klein-titel{color:var(--hellblau);margin-top:0}
+.ansprech-karte img{width:116px;height:116px;border-radius:50%;object-fit:cover;object-position:50% 20%;margin:6px auto 14px;border:3px solid rgba(255,255,255,.18)}
+.ansprech-karte .ansprech-name{color:#fff;margin-bottom:18px}
+.ansprech-karte .ansprech-name strong{font-size:19px}
+.ansprech-karte .ansprech-name span{color:rgba(255,255,255,.7);font-size:15px}
+.ansprech-karte .knopf{width:100%;justify-content:center;margin-bottom:10px}
+.ansprech-karte .knopf-rand{color:#fff;border-color:rgba(255,255,255,.55)}
+.ansprech-karte .knopf-rand:hover{background:#fff;color:var(--nacht);border-color:#fff}
+.ansprech-karte .ansprech-kontakt{margin:6px 0 0;font-size:15px}
+.ansprech-karte .ansprech-kontakt a{color:#fff;text-decoration:none}
+.ansprech-karte .ansprech-kontakt a:hover{color:var(--hellblau)}
+.fakten{margin:0;background:var(--flaeche);border-radius:var(--radius);padding:8px 26px}
+.fakten>div{padding:14px 0;border-bottom:1px solid var(--linie)}
+.fakten>div:last-child{border-bottom:0}
+.fakten dt{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blau);margin-bottom:2px}
+.fakten dd{margin:0;color:var(--nacht);font-weight:600}
+.fakten address{font-style:normal}
+.fakten .mehr{font-size:15px;margin-top:6px}
+.stelle-text .text-block ul.haken-liste li{font-size:17px}
+.stelle-text .text-block p{color:var(--grau);font-size:18px}
+.benefits-liste{columns:2;column-gap:32px}
+.benefits-liste li{break-inside:avoid}
+@media (max-width:640px){.benefits-liste{columns:1}}
+.bewerben{scroll-margin-top:90px}
+.bewerben>h2{font-size:clamp(26px,3vw,38px)}
+.bewerben>p{color:var(--grau);font-size:18px}
+.formular fieldset.feld{border:0;padding:0;margin:0 0 16px}
+.formular fieldset.feld legend{font-weight:700;font-size:14px;color:var(--nacht);margin-bottom:8px;padding:0}
+.formular fieldset.feld label{display:inline-flex;align-items:center;gap:8px;margin-right:22px;font-weight:600;font-size:15px}
+.formular input[type=radio]{width:18px;height:18px;accent-color:var(--blau)}
+.formular input[type=file]{padding:11px 14px;background:#fff}
+.formular .klein{margin-top:6px}
+.formular .knopf{margin-top:6px}
+
+/* WhatsApp: am Rechner schwebend links unten, am Handy in der Schnellleiste */
+.whatsapp-schwebend{position:fixed;left:22px;bottom:22px;z-index:90;display:inline-flex;align-items:center;gap:10px;background:#1fa463;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 14px 34px rgba(43,47,39,.22);transition:transform .2s,background .2s}
+.whatsapp-schwebend:hover{background:#178a52;transform:translateY(-2px)}
+.whatsapp-schwebend svg{width:24px;height:24px}
+html.bf-links .whatsapp-schwebend{left:auto;right:22px}
+@media (max-width:760px){.whatsapp-schwebend{display:none}}
+.schnellleiste .ikon-wa{width:22px;height:22px}
+
+/* Einfache Seiten (Danke, Fehler, 404) */
+.einfach{padding-top:clamp(70px,10vw,140px);padding-bottom:clamp(70px,10vw,140px);max-width:860px}
+.einfach h1{font-size:clamp(34px,5vw,58px)}
+.einfach p{color:var(--grau);font-size:18px}
+.rechtstext{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)}
+.rechtstext ul{padding-left:1.2em}
+
+/* Abschluss-Band hebt sich vom Fuß ab */
+.band-dunkel{background:linear-gradient(135deg,var(--nacht) 0%,var(--nacht-2) 55%,var(--blau-dunkel) 120%)}
+/* Kopf-Knopf: zwischen Handy und Rechner mit Text, am Handy übernimmt die Schnellleiste */
+@media (max-width:1100px){.kopf-knopf span{display:inline}.kopf-knopf{padding:10px 16px}}
+@media (max-width:760px){.kopf-knopf{display:none}.navi-schalter{margin-left:auto}}
+
+
+/* ---------- ZAHN & GUT: Schrift und Farben wie zahnundgut.de ---------- */
+/* Überschriften, Menü, Dachzeilen und Knöpfe in Open Sans Condensed (schmal), wie auf der Hauptseite */
+h1,h2,h3,.aussage-text,.laufband span,.fakten-raster strong,.gross-link{font-family:var(--schrift-schmal);font-stretch:75%;letter-spacing:0}
+h1,h2{font-weight:700}
+h1{font-size:clamp(42px,7vw,92px)}
+h2{font-size:clamp(32px,4.4vw,58px)}
+h3{font-size:23px;font-weight:700}
+.hauptnavi a{font-stretch:75%;font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.dachzeile,.klein-titel,.fuss-titel,.fakten dt{font-stretch:75%;font-size:16px;letter-spacing:.14em}
+.dachzeile::before{background:var(--hellblau)}
+.text-spalte p,.abschnitt-kopf p:not(.dachzeile),.stelle-text .text-block p,.bewerben>p{color:var(--grau)}
+
+/* Knöpfe im Grün der alten Seite. Schrift dunkel, weil Weiß auf diesem Grün zu schwach ist (2,2:1). */
+.knopf{background:var(--gruen);border-color:var(--gruen);color:var(--nacht);font-stretch:87.5%;font-weight:700}
+.knopf:hover{background:var(--gruen-dunkel);border-color:var(--gruen-dunkel);color:var(--nacht)}
+.knopf-rand{background:transparent;border-color:var(--blau);color:var(--blau)}
+.knopf-rand:hover{background:var(--blau);border-color:var(--blau);color:#fff}
+.knopf-rand-hell{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
+.knopf-rand-hell:hover{background:#fff;border-color:#fff;color:var(--nacht)}
+.knopf-hell{background:#fff;border-color:#fff;color:var(--nacht)}
+.knopf-hell:hover{background:var(--gruen);border-color:var(--gruen);color:var(--nacht)}
+.kopf-transparent .kopf-knopf{background:var(--gruen);border-color:var(--gruen);color:var(--nacht)}
+.stelle-zeile .pfeil{background:var(--gruen);color:var(--nacht)}
+.stelle-zeile:hover .pfeil{background:var(--nacht);color:#fff}
+.ablauf li::before{background:var(--gruen);color:var(--nacht)}
+.schnellleiste a:first-child{background:var(--gruen);color:var(--nacht)}
+
+/* Kopf: Logo ist breit und flach, deshalb etwas höher als im Standard */
+.logo img{height:52px}
+@media (max-width:600px){.logo img{height:38px}}
+.fuss-marke img{width:260px}
+
+/* Hero: Grauschleier statt Blau, Grün als Akzent */
+.hero{background:var(--nacht)}
+.hero-karriere .hero-foto img{object-position:50% 35%}
+.hero-unterzeile{max-width:40ch}
+
+/* Leitsatz: grüne Wörter am Anfang */
+.aussage-bild .aussage-text span.an:nth-child(-n+3){color:var(--hellblau)}
+
+/* Bewerbungstipps: ZAHN & GUT hat drei Tipps, daher drei Spalten */
+.tipps-drei{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.tipps-drei{grid-template-columns:1fr}}
+
+/* Ansprechpartnerin ohne Foto: Bild der Praxis links, Karte rechts */
+.ansprech-band .text-spalte strong{color:#fff}
+
+/* Neun Benefits: drei mal drei statt vier Spalten mit einem Rest */
+@media (min-width:1101px){.benefits-raster{grid-template-columns:repeat(3,1fr)}}
+html.ruhig .aussage-bild .aussage-text span{color:#fff}

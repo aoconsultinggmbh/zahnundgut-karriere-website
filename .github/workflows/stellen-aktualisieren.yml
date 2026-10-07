@@ -1,0 +1,79 @@
+# Monatliche Auffrischung der Stellenanzeigen für Google for Jobs und Indeed.
+# Am 1. jedes Monats um 05:00 UTC: Datumsangaben (veroeffentlicht, gueltig_bis) neu setzen,
+# Seite neu bauen, prüfen und einchecken – auf main (Vorschau) UND, falls vorhanden, auf live
+# (echte Seite). Beide Zweige werden unabhängig voneinander behandelt, damit unveröffentlichte
+# Änderungen von main nicht versehentlich live gehen: auf live ändern sich nur Datumsangaben.
+# Läuft vollautomatisch, ohne Rückfrage – besetzte Stellen setzt die AO Consulting von Hand auf
+# status "initiativ"; die bleiben online und werden genauso aufgefrischt.
+name: Stellen aktualisieren
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  auffrischen:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        zweig: [main, live]
+    steps:
+      - name: Gibt es den Zweig?
+        id: pruefen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/branches/${{ matrix.zweig }}" >/dev/null 2>&1; then
+            echo "vorhanden=ja" >> "$GITHUB_OUTPUT"
+          else
+            echo "vorhanden=nein" >> "$GITHUB_OUTPUT"; echo "Zweig ${{ matrix.zweig }} gibt es nicht – übersprungen."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.pruefen.outputs.vorhanden == 'ja'
+        with:
+          ref: ${{ matrix.zweig }}
+
+      # Auf main darf die Prüfung Fehler melden (Seite im Aufbau, Platzhalter) – die Daten werden trotzdem
+      # aufgefrischt, sonst laufen die Anzeigen ab. Auf live muss sie grün sein: dort wird nichts Kaputtes hochgeladen.
+      - name: Datumsangaben auffrischen, bauen, prüfen
+        if: steps.pruefen.outputs.vorhanden == 'ja'
+        run: |
+          python3 scripts/stellen-aktualisieren.py
+          python3 scripts/bauen.py
+          if [ "${{ matrix.zweig }}" = "live" ]; then
+            python3 scripts/pruefen.py
+          else
+            python3 scripts/pruefen.py || echo "::warning::Prüfung meldet Fehler auf main – vor dem Livegang beheben"
+          fi
+
+      - name: Einchecken
+        if: steps.pruefen.outputs.vorhanden == 'ja'
+        run: |
+          git config user.name "Stellen-Aktualisierung"
+          git config user.email "stellen@ao-consult.de"
+          git add stellen website
+          if git diff --cached --quiet; then echo "Nichts zu ändern."; exit 0; fi
+          git commit -m "Stellenanzeigen aufgefrischt ($(date +%d.%m.%Y)) – automatisch, monatlicher Ablauf"
+          git push origin HEAD:${{ matrix.zweig }}
+          echo "geaendert=ja" >> "$GITHUB_ENV"
+
+      # Ein Push mit dem Automatik-Schlüssel löst von sich aus KEINE anderen Abläufe aus
+      # (GitHub verhindert Endlosschleifen). Deshalb Vorschau bzw. Livegang hier ausdrücklich anstoßen.
+      - name: Vorschau bzw. Livegang anstoßen
+        if: steps.pruefen.outputs.vorhanden == 'ja' && env.geaendert == 'ja'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ matrix.zweig }}" = "live" ]; then
+            gh workflow run livegang.yml --ref live
+          else
+            gh workflow run vorschau.yml --ref main
+          fi

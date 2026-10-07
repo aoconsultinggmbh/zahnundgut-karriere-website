@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /bewerbung-senden.php
+Disallow: /bewerbung-konfiguration.php
+
+Sitemap: https://karriere-zahnundgut.de/sitemap.xml

@@ -1,0 +1,217 @@
+/* ============================================================================
+   BARRIEREFREIHEITS-WIDGET
+   Wiederverwendbar für alle Websites von AO Consulting.
+   Zwei Dateien einbinden, sonst nichts:
+     <link rel="stylesheet" href="assets/barrierefreiheit.css">
+     <script src="assets/barrierefreiheit.js" defer></script>
+   Die Bedienoberfläche baut das Skript selbst, das HTML bleibt unberührt.
+
+   Farben werden aus der Seite übernommen, falls --navy und --coral
+   definiert sind. Sonst greifen die Ersatzwerte hier.
+   ============================================================================ */
+
+:root{
+  --bf-navy: var(--navy, #243D6F);
+  --bf-navy-dark: var(--navy-ink, #132038);
+  --bf-akzent: var(--coral, #FD6E5D);
+  --bf-linie: rgba(36,61,111,.14);
+  --bf-text: #3D4759;
+  --bf-grau: #6E7A8C;
+  --bf-hell: #F4F7FB;
+  --bf-breite: 372px;
+  /* Skalierung für Schrift, Zeilen und Buchstaben */
+  --bf-schrift: 1;
+  --bf-zeile: 1;
+  --bf-buchstabe: 0em;
+}
+
+/* ---------- Auslöser ---------- */
+.bf-knopf{
+  position:fixed;right:22px;bottom:22px;z-index:2147483000;
+  width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--bf-navy);color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 30px -8px rgba(19,32,56,.55);
+  transition:transform .2s ease, background .2s ease;
+}
+.bf-knopf:hover{transform:scale(1.07);background:var(--bf-navy-dark)}
+.bf-knopf svg{width:30px;height:30px}
+.bf-knopf:focus-visible{outline:3px solid var(--bf-akzent);outline-offset:3px}
+html.bf-links .bf-knopf{right:auto;left:22px}
+
+/* ---------- Panel ---------- */
+.bf-panel{
+  position:fixed;top:0;right:0;bottom:0;z-index:2147483001;
+  width:min(var(--bf-breite), 100vw);
+  background:#fff;color:var(--bf-text);
+  box-shadow:-14px 0 44px -18px rgba(19,32,56,.5);
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s .3s;
+  display:flex;flex-direction:column;
+  font-family:inherit;font-size:15px;line-height:1.5;
+  /* Geschlossen wirklich aus dem Weg: sonst steht das Fenster rechts neben
+     der Seite und erzeugt bei 390 px ein paar Pixel seitliches Scrollen. */
+  visibility:hidden;
+}
+html.bf-links .bf-panel{right:auto;left:0;transform:translateX(-100%);
+  box-shadow:14px 0 44px -18px rgba(19,32,56,.5)}
+.bf-panel[data-offen="true"],
+html.bf-links .bf-panel[data-offen="true"]{transform:translateX(0);visibility:visible;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s}
+/* Die zweite Zeile ist nötig: „html.bf-links .bf-panel“ ist spezifischer und hielt das Panel auf der
+   linken Seite sonst dauerhaft aus dem Bild geschoben (Fenster ließ sich links nicht öffnen). */
+
+.bf-kopf{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 20px;background:var(--bf-navy);color:#fff;flex:none;
+}
+.bf-kopf h2{margin:0;font-size:1.02rem;font-weight:800;color:#fff;letter-spacing:-.01em}
+.bf-zu{
+  background:rgba(255,255,255,.14);border:0;color:#fff;cursor:pointer;
+  width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+}
+.bf-zu:hover{background:rgba(255,255,255,.26)}
+.bf-zu svg{width:17px;height:17px}
+
+.bf-koerper{padding:20px;overflow-y:auto;flex:1 1 auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+
+.bf-gruppe{margin-bottom:26px}
+.bf-gruppe > h3{
+  margin:0 0 12px;font-size:.72rem;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--bf-akzent);
+}
+
+/* Umschalter als Raster */
+.bf-raster{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.bf-raster--3{grid-template-columns:repeat(3,1fr)}
+.bf-schalter{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:13px 8px;border:1.5px solid var(--bf-linie);border-radius:10px;
+  background:#fff;color:var(--bf-navy);cursor:pointer;
+  font:inherit;font-size:.79rem;font-weight:700;text-align:center;line-height:1.25;
+  transition:border-color .18s ease,background .18s ease,color .18s ease;
+}
+.bf-schalter svg{width:20px;height:20px;flex:none}
+.bf-schalter:hover{border-color:var(--bf-navy);background:var(--bf-hell)}
+.bf-schalter[aria-pressed="true"]{background:var(--bf-navy);border-color:var(--bf-navy);color:#fff}
+.bf-schalter:focus-visible{outline:3px solid var(--bf-akzent);outline-offset:2px}
+
+/* Stufenregler */
+.bf-stufe{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  border:1.5px solid var(--bf-linie);border-radius:10px;padding:9px 11px;margin-bottom:9px;
+}
+.bf-stufe__name{font-size:.83rem;font-weight:700;color:var(--bf-navy)}
+.bf-stufe__steuer{display:flex;align-items:center;gap:7px}
+.bf-stufe button{
+  width:29px;height:29px;border-radius:7px;border:1.5px solid var(--bf-linie);
+  background:#fff;color:var(--bf-navy);cursor:pointer;font:inherit;font-weight:800;font-size:1rem;
+  display:grid;place-items:center;line-height:1;
+}
+.bf-stufe button:hover:not(:disabled){background:var(--bf-navy);border-color:var(--bf-navy);color:#fff}
+.bf-stufe button:disabled{opacity:.35;cursor:default}
+.bf-stufe button:focus-visible{outline:3px solid var(--bf-akzent);outline-offset:2px}
+.bf-stufe__wert{min-width:52px;text-align:center;font-size:.82rem;font-weight:700;color:var(--bf-grau)}
+
+.bf-fuss{
+  padding:16px 20px;border-top:1px solid var(--bf-linie);background:var(--bf-hell);flex:none;
+  display:grid;gap:9px;
+}
+.bf-reset{
+  border:1.5px solid var(--bf-navy);background:#fff;color:var(--bf-navy);
+  border-radius:8px;padding:11px;font:inherit;font-weight:700;font-size:.86rem;cursor:pointer;
+}
+.bf-reset:hover{background:var(--bf-navy);color:#fff}
+.bf-reset:focus-visible{outline:3px solid var(--bf-akzent);outline-offset:2px}
+.bf-hinweis{font-size:.74rem;color:var(--bf-grau);text-align:center;line-height:1.45;margin:0}
+
+/* ============================================================================
+   WIRKUNG DER EINSTELLUNGEN
+   ============================================================================ */
+
+/* Schrift, Zeilen, Buchstaben */
+html.bf-schrift-aktiv{font-size:calc(100% * var(--bf-schrift))}
+html.bf-zeile-aktiv body *{line-height:calc(1.6 * var(--bf-zeile)) !important}
+html.bf-buchstabe-aktiv body *{letter-spacing:var(--bf-buchstabe) !important}
+
+/* Hoher Kontrast */
+html.bf-kontrast body,
+html.bf-kontrast body *:not(.bf-panel):not(.bf-panel *):not(.bf-knopf):not(.bf-knopf *){
+  background-color:#000 !important;color:#fff !important;border-color:#fff !important;
+}
+html.bf-kontrast a:not(.bf-panel *){color:#FFE94A !important;text-decoration:underline !important}
+html.bf-kontrast img:not(.bf-panel *),
+html.bf-kontrast picture:not(.bf-panel *){filter:contrast(1.2)}
+html.bf-kontrast .btn:not(.bf-panel *){outline:2px solid #fff}
+
+/* Invertiert
+   Der Filter sitzt auf <html>, nicht auf <body>: Ein Filter auf body macht body zum Bezugsrahmen
+   für alle festen Elemente (Kopf, Panel, Knopf). Dann scrollen sie mit weg und man scrollt „ins Leere“.
+   Für das Wurzelelement gilt diese Regel nicht. Bilder und das Panel werden zurückgedreht. */
+html.bf-invertiert{filter:invert(1) hue-rotate(180deg)}
+html.bf-invertiert body img,
+html.bf-invertiert body video,
+html.bf-invertiert body iframe,
+html.bf-invertiert .bf-panel,
+html.bf-invertiert .bf-knopf{filter:invert(1) hue-rotate(180deg)}
+
+/* Graustufen */
+/* Auch hier auf <html> (siehe oben). Das Panel ist dann ebenfalls grau, es ist ohnehin fast nur Dunkelblau und Weiß. */
+html.bf-graustufen{filter:grayscale(1)}
+
+/* Links hervorheben */
+html.bf-links-hervor body a:not(.bf-panel *):not(.bf-knopf){
+  text-decoration:underline !important;text-underline-offset:3px;
+  outline:2px solid var(--bf-akzent);outline-offset:2px;border-radius:2px;
+}
+
+/* Überschriften hervorheben */
+html.bf-titel-hervor body :is(h1,h2,h3,h4,h5,h6):not(.bf-panel *){
+  outline:2px dashed var(--bf-akzent);outline-offset:5px;border-radius:3px;
+}
+
+/* Legasthenie-freundlich: breitere Laufweite, klarere Formen, kein Blocksatz */
+html.bf-legasthenie body *:not(.bf-panel):not(.bf-panel *){
+  font-family:Verdana,Tahoma,"Trebuchet MS",sans-serif !important;
+  letter-spacing:.055em !important;word-spacing:.16em !important;text-align:left !important;
+}
+
+/* Großer Cursor */
+html.bf-cursor,html.bf-cursor body *{
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><path d='M6 2l26 15-11 3-4 12z' fill='%23243D6F' stroke='white' stroke-width='2.5'/></svg>") 4 2, auto !important;
+}
+
+/* Animationen anhalten */
+html.bf-ruhe body *,html.bf-ruhe body *::before,html.bf-ruhe body *::after{
+  animation-duration:.001ms !important;animation-iteration-count:1 !important;
+  transition-duration:.001ms !important;scroll-behavior:auto !important;
+}
+
+/* Lesehilfe: Leselinie folgt dem Zeiger */
+.bf-leselinie{
+  position:fixed;left:0;right:0;height:58px;z-index:2147482999;pointer-events:none;
+  border-top:3px solid var(--bf-akzent);border-bottom:3px solid var(--bf-akzent);
+  background:rgba(253,110,93,.09);display:none;
+}
+html.bf-lesehilfe .bf-leselinie{display:block}
+
+/* Lesemaske: alles außer dem Band abdunkeln */
+.bf-maske{position:fixed;inset:0;z-index:2147482998;pointer-events:none;display:none}
+.bf-maske div{position:absolute;left:0;right:0;background:rgba(19,32,56,.72)}
+html.bf-lesemaske .bf-maske{display:block}
+
+/* Bildschirmleser-Hinweis, nur für Screenreader sichtbar */
+.bf-nur-sr{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+@media (max-width:520px){
+  :root{--bf-breite:100vw}
+  .bf-knopf{width:52px;height:52px;right:16px;bottom:16px}
+  html.bf-links .bf-knopf{left:16px}
+}
+
+/* Wer im Betriebssystem weniger Bewegung wünscht, bekommt sie auch hier nicht */
+@media (prefers-reduced-motion:reduce){
+  .bf-panel{transition:none}
+  .bf-knopf{transition:none}
+}
