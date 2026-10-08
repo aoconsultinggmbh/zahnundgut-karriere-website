@@ -13,7 +13,7 @@ RewriteRule ^job/ausbildung-als-zfa-zahnmedizinische-fachangestellte-m-w-d-2026/
 RewriteRule ^job/zfa-zahnmedizinische-fachangestellte-zahnarzthelferin-als-behandlungsassistenz-m-w-d/?$ /stellen/zfa-behandlungsassistenz-meerbusch.html [L,R=301]
 RewriteRule ^job/zmp-zmf-dh-zahnmedizinische-prophylaxeassistentin-dentalhygienikerin-m-w-d/?$ /stellen/zmp-zmf-dh-prophylaxe-meerbusch.html [L,R=301]
 RewriteRule ^job/zmv-praxismanagerin-m-w-d-zahnmedizinische-verwaltungsangestellte-fuer-praxisorganisation-abrechnung/?$ /stellen/zmv-praxismanagerin-meerbusch.html [L,R=301]
-RewriteRule ^job/?(.*)$ /#stellen [L,R=301,NE]
+RewriteRule ^job(/.*)?$ /#stellen [L,R=301,NE]
 RewriteRule ^impressum/?$ /rechtliches/impressum.html [L,R=301]
 RewriteRule ^datenschutzerklaerung/?$ /rechtliches/datenschutz.html [L,R=301]
 RewriteRule ^(wp-admin|wp-login\.php|wp-content|feed)(/.*)?$ / [L,R=301]
