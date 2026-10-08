@@ -13,7 +13,7 @@ Prüft:
   6. Jede Seite hat <title>, <meta name="description">, canonical, lang="de", genau ein <h1>.
   7. Formular: action zeigt auf bewerbung-senden.php, Honigtopf und Datenschutz-Haken vorhanden.
   8. Datenschutz erwähnt Bewerberdaten, Löschfrist und den Hoster; Impressum vorhanden.
-  9. robots.txt, sitemap.xml, indeed-feed.xml vorhanden und gültig.
+  9. robots.txt, sitemap.xml, *-feed.xml vorhanden und gültig.
 
 Aufruf: python3 scripts/pruefen.py [--projekt PFAD] [--fremde-orte Bruchsal,Karlsruhe]
 Rückgabe 1 bei Fehlern (damit GitHub-Abläufe rot werden), Hinweise sind nur Ausgabe.
@@ -161,7 +161,7 @@ def main() -> int:
     for name in ("robots.txt", "sitemap.xml", "bewerbung-senden.php", "bewerbung-konfiguration.php", ".htaccess"):
         if not (web / name).exists():
             fehler.append(f"website/{name} fehlt")
-    for xmlname in ("sitemap.xml", "indeed-feed.xml"):
+    for xmlname in ["sitemap.xml"] + sorted(f.name for f in web.glob("*-feed.xml")):
         p = web / xmlname
         if p.exists():
             try:

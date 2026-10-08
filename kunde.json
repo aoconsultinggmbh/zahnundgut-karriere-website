@@ -8,7 +8,7 @@
   "hauptseite": "https://zahnundgut.de",
   "domain": "karriere-zahnundgut.de",
   "vorschau_domain": "zahnundgut-karriere.vorschau.ao-consult.de",
-  "vorschau": true,
+  "vorschau": false,
   "standorte": [
     {
       "kennung": "meerbusch",
@@ -77,7 +77,19 @@
   "google_for_jobs": {
     "gueltigkeit_tage": 45,
     "datum_monatlich_erneuern": true,
-    "indeed_feed": true
+    "indeed_feed": true,
+    "portale": [
+      "indeed",
+      "talent",
+      "jooble",
+      "kimeta",
+      "adzuna",
+      "jobrapido",
+      "careerjet"
+    ],
+    "_portale_hinweis": "Je Eintrag entsteht website/<name>-feed.xml (Indeed-Format, Herkunftsmarke für Matomo), dazu immer stellen-feed.xml neutral. Anmeldung je Börse macht der Mitarbeiter.",
+    "indexing_api": true,
+    "_indexing_api_hinweis": "Google Indexing API: meldet Stellen nach jedem Livegang an Google. Braucht GitHub-Secret GOOGLE_INDEXING_KEY (Dienstkonto-JSON, in der Search Console als Inhaber eingetragen). Ohne Secret passiert nichts."
   },
   "statistik": {
     "matomo_url": "https://statistik.ao-consult.de/",

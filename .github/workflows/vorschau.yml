@@ -37,7 +37,7 @@ jobs:
           HAUPT_VORSCHAU=$(python3 -c "import json;print(json.load(open('kunde.json')).get('hauptseite_vorschau',''))")
           echo "$VORSCHAU" > _vorschau/CNAME
           printf 'User-agent: *\nDisallow: /\n' > _vorschau/robots.txt
-          rm -f _vorschau/indeed-feed.xml _vorschau/sitemap.xml
+          rm -f _vorschau/*-feed.xml _vorschau/sitemap.xml
           # HTML-Seiten immer mit find suchen, nie mit *.html (Unterordner!)
           while IFS= read -r f; do
             sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#' "$f"

@@ -50,3 +50,13 @@ jobs:
           mirror --reverse --delete --verbose=1 --parallel=2 --exclude-glob .DS_Store --exclude-glob LIESMICH.md --exclude-glob _alte-dateinamen/ ./website/ "${ORDNER:-./}"
           bye
           LFTP
+
+      - name: Stellen an Google melden (nur wenn GOOGLE_INDEXING_KEY gesetzt ist)
+        # Meldet neue und geänderte Stellen sofort an die Google Indexing API. Ohne Secret passiert nichts.
+        # Ein Fehler hier macht den Upload nicht rückgängig, deshalb continue-on-error.
+        continue-on-error: true
+        env:
+          GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
+        run: |
+          pip install -q cryptography
+          python3 scripts/google-indexing.py

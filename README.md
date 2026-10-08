@@ -65,4 +65,26 @@ Annahmen und offene Punkte: `doku/entscheidungen.md`, alte Adressen: `doku/alte-
 - [ ] Indeed: `https://karriere-zahnundgut.de/indeed-feed.xml` bei Indeed für Arbeitgeber eingereicht
 - [ ] Matomo-Eintrag angelegt, `matomo_id` eingetragen, Datenschutz passt
 
+## Live seit 07.10.2026: Reichweite (Stand 08.10.2026)
+
+Feeds je Jobbörse (baut `bauen.py`, Liste in `kunde.json → google_for_jobs.portale`), jeweils mit Herkunftsmarke
+`utm_source/utm_campaign=<börse>` für Matomo:
+
+| Börse | Feed | angemeldet |
+|---|---|---|
+| Indeed | https://karriere-zahnundgut.de/indeed-feed.xml | offen |
+| Talent.com | https://karriere-zahnundgut.de/talent-feed.xml | offen |
+| Jooble | https://karriere-zahnundgut.de/jooble-feed.xml | offen |
+| Kimeta | https://karriere-zahnundgut.de/kimeta-feed.xml | offen |
+| Adzuna | https://karriere-zahnundgut.de/adzuna-feed.xml | offen |
+| Jobrapido | https://karriere-zahnundgut.de/jobrapido-feed.xml | offen |
+| Careerjet | https://karriere-zahnundgut.de/careerjet-feed.xml | offen |
+| weitere | https://karriere-zahnundgut.de/stellen-feed.xml (neutral) | bei Bedarf |
+
+- [x] Search Console: Property der Praxis, Sitemap gesendet, Rich-Results-Test grün (08.10.2026)
+- [ ] Google Indexing API: Secret `GOOGLE_INDEXING_KEY` setzen, dann meldet der Livegang-Ablauf jede Stelle an Google
+- [ ] Bundesagentur für Arbeit: Arbeitgeberkonto der Praxis, Stellen einmal von Hand anlegen. **Kein Automatismus:**
+      wird eine Stelle besetzt oder pausiert, dort von Hand deaktivieren.
+- [ ] Matomo-Ziel „Bewerbung abgeschickt“ (URL enthält `danke.html`), Monatsbericht an die Praxis
+
 Ablauf für Projekt, Vorschau, DNS und Livegang: Skill `webseite-veroeffentlichen`.

@@ -6,7 +6,7 @@ bauen.py – baut aus kunde.json und stellen/*.json alles, was Stellen betrifft:
   website/index.html                  Stellenliste zwischen <!-- STELLEN:ANFANG --> und <!-- STELLEN:ENDE -->
   website/assets/css/ci.css           Farben und Schriften aus kunde.json
   website/sitemap.xml                 alle Seiten, Stellen mit lastmod
-  website/indeed-feed.xml             XML-Feed im Indeed-Format
+  website/<boerse>-feed.xml           XML-Feeds im Indeed-Format je Jobbörse (+ stellen-feed.xml neutral)
   website/bewerbung-konfiguration.php Empfänger je Stelle (liest bewerbung-senden.php, nie der Browser)
   website/stellen.json                Liste für Prüfungen und Kollegen
   website/robots.txt                  mit Sitemap-Zeile der Live-Domain
@@ -455,7 +455,7 @@ def baue(projekt: Path) -> int:
                 f"    <title><![CDATA[{s['titel']}]]></title>\n"
                 f"    <date><![CDATA[{datetime.fromisoformat(s['veroeffentlicht']).strftime('%a, %d %b %Y 09:00:00 +0200')}]]></date>\n"
                 f"    <referencenumber><![CDATA[{s['kennung']}]]></referencenumber>\n"
-                f"    <url><![CDATA[{url}?utm_source=indeed]]></url>\n"
+                f"    <url><![CDATA[{url}?utm_source=QUELLE&utm_medium=jobboerse&utm_campaign=QUELLE]]></url>\n"
                 f"    <company><![CDATA[{kunde['firma']}]]></company>\n"
                 f"    <city><![CDATA[{st['ort']}]]></city>\n"
                 f"    <state><![CDATA[{st['region']}]]></state>\n"
@@ -507,14 +507,21 @@ def baue(projekt: Path) -> int:
     sm.append("</urlset>\n")
     (web / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
 
-    # --- indeed-feed.xml ---
-    if kunde.get("google_for_jobs", {}).get("indeed_feed", True):
-        (web / "indeed-feed.xml").write_text(
-            '<?xml version="1.0" encoding="utf-8"?>\n<source>\n'
-            f"  <publisher><![CDATA[{kunde['firma']}]]></publisher>\n"
-            f"  <publisherurl><![CDATA[{basis}]]></publisherurl>\n"
-            f"  <lastBuildDate><![CDATA[{datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0200')}]]></lastBuildDate>\n"
-            + "".join(indeed_jobs) + "</source>\n", encoding="utf-8")
+    # --- XML-Feeds je Jobbörse (gleiches Indeed-Format, eigene Herkunftsmarke für Matomo) ---
+    # Indeed, Talent.com, Jooble, Kimeta, Adzuna, Jobrapido, Careerjet lesen alle diesen Aufbau.
+    # stellen-feed.xml ist die neutrale Fassung für jede weitere Börse. Liste in kunde.json → google_for_jobs.portale.
+    # utm_campaign = Börse, damit Matomo (ohne Zusatzmodul) unter Akquisition → Kampagnen zeigt, woher Besucher kommen.
+    gfj = kunde.get("google_for_jobs", {})
+    if gfj.get("indeed_feed", True):
+        portale = gfj.get("portale") or ["indeed", "talent", "jooble", "kimeta", "adzuna", "jobrapido", "careerjet"]
+        for quelle in list(dict.fromkeys(portale)) + ["stellen"]:
+            marke = "feed" if quelle == "stellen" else quelle
+            (web / f"{quelle}-feed.xml").write_text(
+                '<?xml version="1.0" encoding="utf-8"?>\n<source>\n'
+                f"  <publisher><![CDATA[{kunde['firma']}]]></publisher>\n"
+                f"  <publisherurl><![CDATA[{basis}]]></publisherurl>\n"
+                f"  <lastBuildDate><![CDATA[{datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0200')}]]></lastBuildDate>\n"
+                + "".join(indeed_jobs).replace("QUELLE", marke) + "</source>\n", encoding="utf-8")
 
     # --- Empfänger-Konfiguration für PHP (liegt in website/, ist aber PHP → nicht von außen lesbar) ---
     php = ["<?php", f"// {GENERIERT} – Empfänger je Stelle. Nicht von Hand ändern.", "return ["]
